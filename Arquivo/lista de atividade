@@ -1,0 +1,34 @@
+1. Crie um programa que escreva de 1 até 10 em um arquivo, armazenando um número por linha.]
+
+2. Crie um programa que receba um texto do usuário e grave o texto em um arquivo.
+
+3. Implemente um programa que abra o arquivo texto (criado no exercício anterior) e conte a quantidade de
+caracteres ‘a’ que estão presentes nele. Imprima a quantidade na tela.
+
+4. Implemente um programa que leia um arquivo texto e imprima, linha a linha, o seu conteúdo na tela. Imprima
+também a quantidade de linhas que este arquivo possui.
+
+5. Escreva um programa que concatene o conteúdo de dois arquivos. O conteúdo dos dois arquivos deverá ser
+adicionado em um terceiro arquivo.
+
+6. Faça um programa para inserir N letras informadas pelo usuário em um arquivo texto. Onde N é uma quantidade
+de letras definida pelo usuário. Depois de inseridas as N letras, o programa deverá ler todas as N letras do
+arquivo, calcular e mostrar a quantidade de vogais, ou seja, quantas letras a, e, i, o, u.
+
+7. Crie um programa que leia a quantidade de veículos que uma locadora de veículos possui e o valor que ela cobra
+por cada aluguel, mostrando as informações pedidas a seguir:
+• Sabendo-se que um terço dos veículos são alugados por mês, exiba o faturamento anual da locadora
+• Quando o cliente atrasa a entrega, é cobrada uma multa de 20% sobre o valor do aluguel. Sabendo que
+um décimo dos veículos alugados no mês é devolvido com atraso, calcule o valor ganho com multas no
+mês
+• Sabe-se ainda que 2% dos veículos precisam de manutenção ao longo do ano. Calcule o valor gasto com
+a manutenção anual, sabendo que o valor gasto em média com a manutenção é de R$ 600,00.
+Além de mostrar os resultados na tela, grave em um arquivo chamado resultado.txt. Cada valor deverá ser
+armazenado em uma linha.
+
+8. Crie um programa que receba dados de vários alunos (Matricula e Telefone) e armazene em um arquivo texto.
+Crie no mesmo programa uma opção de ler os mesmos dados já armazenados de um arquivo.
+
+9. Considere um arquivo texto que armazene números em ponto flutuante em cada uma de suas linhas. Escreva
+um programa em C que determine o valor máximo, o valor mínimo e a média desses valores armazenados no
+arquivo. Imprima esses valores na tela.
