@@ -1,0 +1,52 @@
+{
+    "Custom C Template": {
+        "prefix": "includ",
+        "body": [
+            "#include <stdio.h>",
+            "",
+            "int main() {",
+            "",
+            "",
+            "",
+            "    printf(\"\\n--------- | FIM DO PROGRAMA | ---------\\n\\n\");",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Custom C Template"
+    },
+    "Custom C Template for Linux": {
+        "prefix": "linux",
+        "body": [
+            "#include <stdio.h>",
+            "",
+            "int main() {",
+            "",
+            "",
+            "",
+            "    puts(\"\\n--------- | FIM DO PROGRAMA | ---------\\n\");",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Custom C Template for Linux"
+    },
+    "Printf1 Template": {
+        "prefix": "print",
+        "body": "printf(\"${1}\\n\"${2});${0}",
+        "description": "Printf Template"
+    },
+    "Printf2 Template": {
+        "prefix": "prin",
+        "body": "printf(\"${1}\\n\"${2});${0}",
+        "description": "Printf Template"
+    },
+    "Printf4 Template": {
+        "prefix": "pri",
+        "body": "printf(\"${1}\\n\"${2});${0}",
+        "description": "Printf Template"
+    },
+	"Scanf Template":{
+		"prefix": "scan",
+        "body": "scanf(\"%${1}\", ${2});${0}",
+        "description": "Scanf Template"
+	}
+}

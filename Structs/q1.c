@@ -15,15 +15,15 @@ struct cliente {
 
 void FillCliente(struct cliente *clientePtr) {
   // (*clientePtr).telefone = 13213;
-  printf("qual seu nome praga");
+  printf("qual seu nome praga\n");
   scanf("%s", clientePtr->nome);
-  printf("qual seu numero de telefione");
+  printf("qual seu numero de telefione\n");
   scanf("%d", &clientePtr->telefone);
-  printf("qual e o seu CEP");
+  printf("qual e o seu CEP\n");
   scanf("%d", &clientePtr->endereco.cep);
-  printf("qual e o seu rua");
+  printf("qual e o seu rua\n");
   scanf("%s", clientePtr->endereco.rua);
-  printf("qual e o seu numero");
+  printf("qual e o seu numero\n");
   scanf("%d", &clientePtr->endereco.numero);
 }
 
