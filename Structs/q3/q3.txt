@@ -1,0 +1,2 @@
+a marca do carro e:[a] o modelo do carro e:[aa] a cor do carro e:[aa] o ano do carro e:[0] a marca do carro e:[ford] o modelo do carro e:[k] a cor do carro e:[verde] o ano do carro e:[2011]
+a marca do carro e:[ford] o modelo do carro e:[kaap] a cor do carro e:[amarelo] o ano do carro e:[2012]

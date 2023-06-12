@@ -2,31 +2,31 @@
 
 struct carro
 {
-    char marca;
-    char modelo;
-    char cor;
+    char marca[50];
+    char modelo[50];
+    char cor[50];
     int ano;
 };
 
 void info(struct carro *carroptr) {
   
     printf("qual a marca do carro\n");
-    scanf("%s%*c",carroptr->marca);
+    scanf("%s",carroptr->marca);
     printf("qual o modelo do carro\n");
-    scanf("%s%*c",carroptr->modelo);
+    scanf("%s",carroptr->modelo);
     printf("qual a cor do carro\n");
-    scanf("%s%*c",carroptr->cor);
+    scanf("%s",carroptr->cor);
     printf("qual o ano do carro\n");
-    scanf("%d%*c",carroptr->ano);
+    scanf("%d%*c",&carroptr->ano);
 
 }
 
 void printinfo (struct carro carro){
 
-    printf("a marca do carro e:\n", carro.marca);
-    printf("o modelo do carro e:\n", carro.modelo);
-    printf("a cor do carro e:\n", carro.cor);
-    printf("o ano do carro e:\n", carro.ano);
+    printf("a marca do carro e:%s \n", carro.marca);
+    printf("o modelo do carro e:%s \n", carro.modelo);
+    printf("a cor do carro e:%s \n", carro.cor);
+    printf("o ano do carro e:%d \n", carro.ano);
 
 }
 

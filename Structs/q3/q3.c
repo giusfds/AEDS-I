@@ -2,32 +2,32 @@
 
 struct carro
 {
-    char marca;
-    char modelo;
-    char cor;
+    char marca[50];
+    char modelo[50];
+    char cor[50];
     int ano;
 };
 
 void info(struct carro *carroptr) {
   
     printf("qual a marca do carro\n");
-    scanf("%s%*c", carroptr->marca);
+    scanf("%s", carroptr->marca);
     printf("qual o modelo do carro\n");
-    scanf("%s%*c", carroptr->modelo);
+    scanf("%s", carroptr->modelo);
     printf("qual a cor do carro\n");
-    scanf("%s%*c", carroptr->cor);
+    scanf("%s", carroptr->cor);
     printf("qual o ano do carro\n");
-    scanf("%d%*c", carroptr->ano);
+    scanf("%d%*c", &carroptr->ano);
 
 }
 
 void printinfo (struct carro carro){
     
-    FILE *arquivo = fopen("q3.txt", "w");
-    fprintf(arquivo,"a marca do carro e:\n", carro.marca);
-    fprintf(arquivo,"o modelo do carro e:\n", carro.modelo);
-    fprintf(arquivo,"a cor do carro e:\n", carro.cor);
-    fprintf(arquivo,"o ano do carro e:\n", carro.ano);
+    FILE *arquivo = fopen("q3.txt", "a");
+    fprintf(arquivo,"a marca do carro e:[%s] ", carro.marca);
+    fprintf(arquivo,"o modelo do carro e:[%s] ", carro.modelo);
+    fprintf(arquivo,"a cor do carro e:[%s] ", carro.cor);
+    fprintf(arquivo,"o ano do carro e:[%d]\n", carro.ano);
     fclose(arquivo);
 }
 
