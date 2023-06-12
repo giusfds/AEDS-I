@@ -46,7 +46,7 @@
     },
 	"Scanf Template":{
 		"prefix": "scan",
-        "body": "scanf(\"%${1}\", ${2});${0}",
+        "body": "scanf(\"%${1}\", &${2});${0}",
         "description": "Scanf Template"
 	}
 }
