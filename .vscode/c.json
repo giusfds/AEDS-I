@@ -48,5 +48,10 @@
 		"prefix": "scan",
         "body": "scanf(\"%${1}\", &${2});${0}",
         "description": "Scanf Template"
-	}
+	},
+    "Retur Template":{
+        "prefix": "ret",
+        "body": "return ${1}; ${0}",
+        "description": "Return Teamplate"
+    }
 }
