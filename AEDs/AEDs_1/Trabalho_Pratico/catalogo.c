@@ -7,7 +7,7 @@ typedef struct catalogo
         edicao/cadastro/excluir novos carros
         todos os direitos reservados
     */
-    double placa;
+    char placa;
     char modelo[80];
     char marca[80];
     int ano;
@@ -25,11 +25,18 @@ int menu(){
     */
 
     int aux;
-    printf("qual opcao voce vai querer\n");
-    printf("1 - cadastrar novo carro\n");
-    printf("2 - editar um carro ja existente\n");
-    printf("3 - excluir um carro\n");
-    scanf("%d", &aux);
+    do
+    {
+        printf("Ola, aqui em baixo esta nosso menu, escolha a opcao\n");
+        printf("[1] - para listar todos os veiculos\n");
+        printf("[2] - para pesquisar os veiculos\n");
+        printf("[3] - para cadastrar um novo veiculo\n");
+        printf("[4] - para editar o cadastro do veiculo\n");
+        printf("[5] - excluir um carro ja existente\n");
+        printf("[0] - sair do programa\n");
+        scanf("%d", &aux);
+    } while (aux > 5 || aux < 0);
+    
     return aux;
 }
 
@@ -41,7 +48,7 @@ void cadastro(struct catalogo *carroptr){
     if (aux1 == 1)
     {
         printf("qual e a placa do carro\n");
-        scanf("%lf", carroptr -> placa);
+        scanf("%s", carroptr -> placa);
         printf("qual e o modelo do carro\n");
         scanf("%s", carroptr -> modelo);
         printf("qual e a marca do carro\n");
@@ -61,7 +68,7 @@ void cadastro(struct catalogo *carroptr){
     */
     {
         printf("qual e a placa do moto\n");
-        scanf("%lf", carroptr -> placa);
+        scanf("%s", carroptr -> placa);
         printf("qual e o modelo do moto\n");
         scanf("%s", carroptr -> modelo);
         printf("qual e a marca do moto\n");
@@ -78,6 +85,13 @@ void cadastro(struct catalogo *carroptr){
 }
 
 void edicao(){
+    /* 
+        Giuseppe Sena Cordeiro - 801779
+        todos os direitos reservados
+        excluir/cadastro/edicao novos carros
+    */
+
+    //esa funcao nao e void, tem q retornar um numero
     printf("o que voce deseja editar\n ");
     printf("[1] - para a placa\n [2] - para o modelo\n [3] - para a marca\n [4] - para a marca\n [5] - para o ano\n [6] - para o preco\n [7] - para mudar a obs\n");
     
@@ -85,32 +99,58 @@ void edicao(){
 }
 
 int main() {
-    int resultadomenu;
-    //pega o resultado do menu, o que a pessoa quer fazer
-    resultadomenu=menu;
+    int resultadomenu, carrosacadastrar;
 
-    if (resultadomenu == 1)
-    {
-        /* cadastro do carro */
-        cadastro;
+    printf("quntos carros vc quer cadastrar\n");
+    scanf("%d", &carrosacadastrar);
 
-    }
-    if (resultadomenu == 2)
-    {
-        /* edicao do carro */
-    }
-    if (resultadomenu == 3)
-    {
-        /* deleter um carro */
-        
-    }
-    
-    
-    
-        
-    
-    
 
+    //tentativa de ufazer o menu funcionar
+    switch () {
+        case 1:
+            printf("Executando caso 1\n");
+            break;
+        case 2:
+            printf("Executando caso 2\n");
+            break;
+        case 3:
+            printf("Executando caso 3\n");
+            break;
+        case 4:
+            printf("Executando caso 3\n");
+            break;
+        case 5:
+            printf("Executando caso 3\n");
+            break;
+        case 6:
+            printf("Executando caso 3\n");
+            break;
+        case 0:
+            printf("Executando caso 3\n");
+            break;
+        default:
+            printf("Caso padrão\n");
+            break;
+    }
+    
+    
+    
+        /* 
+        1) como que eu vou testar as placas
+        2) a condicao do if em edicao, e tem que ser com ponteiro tbm?
+        3) como guardar em uma variavel a questao que esta presente no "menu"
+        4) usar o "do wile"?
+        5) como fazer o mecanismo de pesquisa
+        6) como distinguir o carro da moto
+        7) restricao do menu, so usar caracteres validos
+        */
+    
+    
+    /* 
+        todos os direitos reservados
+        Giuseppe Sena Cordeiro - 801779
+        excluir/cadastro/edicao novos carros
+    */
 
     printf("\n\n--------- | FIM DO PROGRAMA | ---------\n\n");
     return 0;
