@@ -155,3 +155,8 @@ int main() {
     printf("\n\n--------- | FIM DO PROGRAMA | ---------\n\n");
     return 0;
 }
+    /* 
+        Giuseppe Sena Cordeiro - 801779
+        cadastro/edicao/excluir novos carros
+        todos os direitos reservados
+    */
