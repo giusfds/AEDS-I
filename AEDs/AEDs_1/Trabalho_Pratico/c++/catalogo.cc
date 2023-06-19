@@ -95,7 +95,7 @@ void cadastro(veiculo VetVeiculos[]) {
   arquivo << VetVeiculos[0 /*a definir*/].getTipo();
   arquivo << VetVeiculos[0 /*a definir*/].getObs();
   
-  
+  //arrumar a parte de printar no arquivo 
 }
 
 int main() {
