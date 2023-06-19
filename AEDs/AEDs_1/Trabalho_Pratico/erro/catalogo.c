@@ -7,11 +7,11 @@ typedef struct carro
         edicao/cadastro/excluir novos carros
         todos os direitos reservados
     */
-    char placa[80];
+    char placa[80];//ja
     char modelo[80];
     char marca[80];
-    int ano;
-    float preco;
+    int ano;// ja 
+    float preco;// ja 
     char tipo;
     char obs[500];
 } carro;
@@ -33,7 +33,7 @@ void cadastro(struct carro *carroptr)
 
     do
     {
-        printf("e um carro ou uma moto? [1] para carro, [2] para moto\n");
+        princitf("e um carro ou uma moto? [1] para carro, [2] para moto\n");
         scanf("%d", &aux);
     } while (aux < 1 || aux > 2);
 
