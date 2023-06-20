@@ -1,0 +1,27 @@
+{
+	"Custom C++ Template for Linux": {
+        "prefix": ["template", "tem"],
+        "body": [
+            "#include <iostream>",
+            "",
+            "int main() {",
+            "",
+            "    cout << \"Olá mundo!\\n\";${0}",
+            "",
+            "    cout << \"\\n------- | FIM DO PROGRAMA | -------\\n\\n\";",
+            "    return 0;",
+            "}"
+        ],
+        "description": "Custom C Template for Linux"
+    },
+    "Cout Template": {
+        "prefix": "co",
+        "body": "cout << ${0} << endl;",
+        "description": "Cout Template"
+    },
+	"Cin":{
+		"prefix": "ci",
+        "body": "cin << ${0};",
+        "description": "Cin Template"
+	}
+}
