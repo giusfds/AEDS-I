@@ -75,13 +75,13 @@ void cadastro(veiculo VetVeiculos[]) {
   VetVeiculos[0 /*a definir*/].setAno(readString());
   cout << "qual e o preco do veiculo" << endl; // preco
   VetVeiculos[0 /*a definir*/].setPreco(readString());
-  cout << "qual e o preco do veiculo" << endl; // modelo
+  cout << "qual e o modelo do veiculo" << endl; // modelo
   VetVeiculos[0 /*a definir*/].setModelo(readString());
-  cout << "qual e o preco do veiculo" << endl; // marca
+  cout << "qual e a marca do veiculo" << endl; // marca
   VetVeiculos[0 /*a definir*/].setMarca(readString());
   cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
   VetVeiculos[0 /*a definir*/].setTipo(readString());
-  cout << "qual e o preco do veiculo" << endl; // obs
+  cout << "tem alguma obs" << endl; // obs
   VetVeiculos[0 /*a definir*/].setObs(readString());
   
     
@@ -105,19 +105,24 @@ int main() {
   while ((Menu = menu()) != 0) {
     switch (Menu) {
     case 1:
-      /* code */
+      /* parte para listar todos os veiculos */
+      
       break;
     case 2:
-      /* code */
+      /* pesquisar todos os veiculos */
+
       break;
     case 3:
+      /* cadastro de um novo veiculo */
       cadastro(VetVeiculos);
       break;
     case 4:
-      /* code */
+      /* para ediatr o cadastro dos veiculos */
+
       break;
     case 5:
-      /* code */
+      /* excluir um carro ja existente */
+
       break;
     default:
       break;
