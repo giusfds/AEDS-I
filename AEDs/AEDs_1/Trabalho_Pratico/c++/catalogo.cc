@@ -175,14 +175,24 @@ int main() {
 }
 /*
 1) como faz o ngs de edicao e e deletar
-
 2) qnd deleta, por estar colocando em um verto, posso deixar um "buraco" no
-vetor, ou eu tenho que lidar com o suposto "buraco" 3) sujestao de como primtar
+vetor, ou eu tenho que lidar com o suposto "buraco" 
+3) sujestao de como primtar
 as linhas do arquivode forma mais facil 
 (sem se usando while(file.eof()) {file>> print})
+4) esta dando seguimental falt no arquivo
 
 Respostas:
-1)
-2)
+1)o que ta no vetor ser printado no arquivo dps, colocar no arquivo, de forma que o arquivo seja so para salvar
+(ter um metodo de sincronizar o vetor com o arquivo)
+2) com o buraco, vc tem que pegar o carro do final e colocar no "buraco"
+3) manipular o vetor, o aquivo ta la so para salvar os dados, para printar, e so percorrer o veiculo
+de forma a printar tudo o que vc quiser que deve esta presente no vetor
+4) usar a biblioteca file com ponteiro
 
+*/
+
+
+/*
+ARRUMAR O SEGUIMENTAL FUALT DO CADASTRO NA MAIN
 */
