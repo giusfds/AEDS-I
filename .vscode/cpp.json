@@ -1,12 +1,14 @@
 {
 	"Custom C++ Template for Linux": {
-        "prefix": ["template", "tem"],
+        "prefix": ["include", "inc"],
         "body": [
             "#include <iostream>",
             "",
+            "using namespace std;",
+            "",
             "int main() {",
             "",
-            "    cout << \"Olá mundo!\\n\";${0}",
+            "",
             "",
             "    cout << \"\\n------- | FIM DO PROGRAMA | -------\\n\\n\";",
             "    return 0;",
@@ -16,12 +18,22 @@
     },
     "Cout Template": {
         "prefix": "co",
-        "body": "cout << ${0} << endl;",
+        "body": "cout << ${1} << endl;${0}",
         "description": "Cout Template"
     },
 	"Cin":{
 		"prefix": "ci",
-        "body": "cin << ${0};",
+        "body": "cin >> ${0};",
         "description": "Cin Template"
-	}
+	},
+    "class":{
+        "prefix": "cla",
+        "body" : "class ${1}{${0}};",
+        "description": "class template"
+    },
+    "this":{
+        "prefix": "thi",
+        "body": "this -> ${0};",
+        "description": "this template"
+    }
 }
