@@ -5,6 +5,7 @@
         "*.tcc": "cpp",
         "string": "cpp",
         "streambuf": "cpp",
-        "iostream": "cpp"
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }
