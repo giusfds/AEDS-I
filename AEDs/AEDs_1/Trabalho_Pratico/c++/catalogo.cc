@@ -156,7 +156,7 @@ int main() {
       break;
     case 3:
       /* cadastro de um novo veiculo */
-      cadastro(VetVeiculos);
+      cadastro(VetVeiculos); //aqui ta dando erro de seguimentation fault
       break;
     case 4:
       /* para ediatr o cadastro dos veiculos */
