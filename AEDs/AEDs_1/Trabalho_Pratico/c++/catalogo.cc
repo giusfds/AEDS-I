@@ -1,13 +1,20 @@
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <limits>
+// #include <stdlib.h>
+
 
 using namespace std;
 
 string readString() {
   // ler ate o fim da string, contando os espacos
   string str;
+  cout << "ANTES" << endl;
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
   getline(cin, str);
+  // cin >> str;
+  cout << "DEPOIS" << endl;
   return str;
 }
 
@@ -44,15 +51,18 @@ public:
   void setModelo(string novoModelo) { modelo = novoModelo; }
   void setMarca(string novaMarca) { marca = novaMarca; }
   void setTipo() {
-    string tipo;
     do {
+      cout << "ksdlfjksdlfj" <<endl;
       tipo = readString();
-    } while (tipo != "carro" || tipo != "Carro" || tipo != "moto" ||
+    } while (tipo != "carro" && tipo != "Carro" && tipo != "moto" &&
              tipo != "Moto");
 
     this->tipo = tipo;
   }
-  void setObs(string novaObs) { obs = novaObs; }
+  void setObs(string novaObs) { 
+    // cout << "lskdfjlksdjf" << endl;
+    obs = novaObs;
+  }
   void setPlaca(string placa) { this->placa = placa; }
   void setPreco(string preco) {
     this->preco = stof(preco); // trocando de string para float
@@ -84,7 +94,7 @@ int menu() {
     cout << "[0] - sair do programa" << endl; // feito
 
     scanf("%d%*c", &aux);
-  } while (aux > 5 || aux < 0);
+  } while (aux > 5 && aux < 0);
   return aux;
 }
 
@@ -93,33 +103,59 @@ void cadastro(veiculo VetVeiculos[]) {
   fstream arquivo("veiculos.txt", ios::app);
 
   cout << "qual e a placa do veiculo" << endl; // com a placa na classe provada
-  VetVeiculos[veiculo::contador].setPlaca(readString());
+  VetVeiculos[veiculo::contador - 1].setPlaca(readString());
   cout << "qual e o ano do veiculo" << endl; // ano
-  VetVeiculos[veiculo::contador].setAno();
+  VetVeiculos[veiculo::contador - 1].setAno();
   cout << "qual e o preco do veiculo" << endl; // preco
-  VetVeiculos[veiculo::contador].setPreco(readString());
+  VetVeiculos[veiculo::contador - 1].setPreco(readString());
   cout << "qual e o modelo do veiculo" << endl; // modelo
-  VetVeiculos[veiculo::contador].setModelo(readString());
+  VetVeiculos[veiculo::contador - 1].setModelo(readString());
   cout << "qual e a marca do veiculo" << endl; // marca
-  VetVeiculos[veiculo::contador].setMarca(readString());
+  VetVeiculos[veiculo::contador - 1].setMarca(readString());
   cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
-  VetVeiculos[veiculo::contador].setTipo();
+  VetVeiculos[veiculo::contador - 1].setTipo();
   cout << "tem alguma obs" << endl; // obs
-  VetVeiculos[veiculo::contador].setObs(readString());
+  VetVeiculos[veiculo::contador - 1].setObs(readString());
 
   // printar no aquivo
-
-  arquivo << VetVeiculos[veiculo::contador].getPlaca();
-  arquivo << VetVeiculos[veiculo::contador].getAno();
-  arquivo << VetVeiculos[veiculo::contador].getPreco();
-  arquivo << VetVeiculos[veiculo::contador].getModelo();
-  arquivo << VetVeiculos[veiculo::contador].getMarca();
-  arquivo << VetVeiculos[veiculo::contador].getTipo();
-  arquivo << VetVeiculos[veiculo::contador].getObs();
+  // arquivo << VetVeiculos[veiculo::contador - 1].getPlaca();
+  // arquivo << VetVeiculos[veiculo::contador - 1].getAno();
+  // arquivo << VetVeiculos[veiculo::contador - 1].getPreco();
+  // arquivo << VetVeiculos[veiculo::contador - 1].getModelo();
+  // arquivo << VetVeiculos[veiculo::contador - 1].getMarca();
+  // arquivo << VetVeiculos[veiculo::contador - 1].getTipo();
+  // arquivo << VetVeiculos[veiculo::contador - 1].getObs();
 
   // arrumar a parte de printar no arquivo
 
   cout << "O carro foi cadastrado!" << endl;
+}
+
+void esvaziaVet(veiculo VetVeiculos[]){
+  // aqui serve para ezvasair o vetor
+
+  FILE* arquivo = fopen ("veiculos.txt", "a");
+
+  if (veiculo::contador == 0 ) return;
+
+  for (int i = 0; i < veiculo::contador; i++)
+  {
+    fprintf(arquivo, "%s", VetVeiculos[i].getPlaca());
+    fprintf(arquivo, "%s", VetVeiculos[i].getAno());
+    fprintf(arquivo, "%s", VetVeiculos[i].getPreco());
+    fprintf(arquivo, "%s", VetVeiculos[i].getModelo());
+    fprintf(arquivo, "%s", VetVeiculos[i].getMarca());
+    fprintf(arquivo, "%s", VetVeiculos[i].getTipo());
+    fprintf(arquivo, "%s", VetVeiculos[i].getObs());
+
+  }
+  
+
+  // limpar o vetor 
+  veiculo::contador = 0;
+
+  fclose (arquivo);
+
 }
 
 veiculo pesquisa(veiculo VetVeiculos[], string placa) {
@@ -130,15 +166,38 @@ veiculo pesquisa(veiculo VetVeiculos[], string placa) {
     }
   }
 
-  throw "ksljfkljsdlfjs";
+  throw "carro nao encontrado";
 
   // return VetVeiculos[0];
+}
+
+void excluicarro(veiculo VetVeiculos[], veiculo veiculoASerExcluido){
+  // deletar o carro do arquivo
+  if (veiculo::contador == 0){
+    cout << "erro lista vazia" << endl;
+    return;
+  }
+
+    // buscando a posicao do carro a ser excluido
+  bool found = false;
+  int i;
+  for (i = 0; !found && i < veiculo::contador; i++)
+  {
+    if (VetVeiculos[i].getPlaca() == veiculoASerExcluido.getPlaca()) {
+      found = true;    
+      VetVeiculos[i] = VetVeiculos[veiculo::contador-1];
+    }
+  }
+
+
+  veiculo::contador--;
 }
 
 int main() {
 
   int Menu;
   veiculo VetVeiculos[5];
+  veiculo aux; //pensar mais sobre dps
   // switch case com a variavel do menu
   while ((Menu = menu()) != 0) {
     switch (Menu) {
@@ -149,14 +208,15 @@ int main() {
     case 2:
       /* pesquisar todos os veiculos */
       try {
-        pesquisa(VetVeiculos, readString());
+        aux = pesquisa(VetVeiculos, readString());
       } catch (exception erro) {
         cout << erro.what() << endl;
       }
       break;
     case 3:
       /* cadastro de um novo veiculo */
-      cadastro(VetVeiculos); //aqui ta dando erro de seguimentation fault
+      cadastro(VetVeiculos);
+      if(veiculo::contador == 5 ) esvaziaVet(VetVeiculos);
       break;
     case 4:
       /* para ediatr o cadastro dos veiculos */
@@ -164,13 +224,14 @@ int main() {
       break;
     case 5:
       /* excluir um carro ja existente */
-
+      excluicarro(VetVeiculos, aux);
       break;
     default:
       break;
     }
   }
 
+  esvaziaVet(VetVeiculos);
   return 0;
 }
 /*
@@ -186,13 +247,7 @@ Respostas:
 1)o que ta no vetor ser printado no arquivo dps, colocar no arquivo, de forma que o arquivo seja so para salvar
 (ter um metodo de sincronizar o vetor com o arquivo)
 2) com o buraco, vc tem que pegar o carro do final e colocar no "buraco"
-3) manipular o vetor, o aquivo ta la so para salvar os dados, para printar, e so percorrer o veiculo
 de forma a printar tudo o que vc quiser que deve esta presente no vetor
 4) usar a biblioteca file com ponteiro
 
-*/
-
-
-/*
-ARRUMAR O SEGUIMENTAL FUALT DO CADASTRO NA MAIN
 */
