@@ -1,8 +1,24 @@
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include <stdio.h>
 
 using namespace std;
+
+// FRUFRU
+// ANCHOR frufru
+#define RED "\x1b[31m"
+#define GREEN "\x1b[32m"
+#define YELLOW "\x1b[33m"
+#define BLUE "\x1b[34m"
+#define MAGENTA "\x1b[35m"
+#define CYAN "\x1b[36m"
+#define RESET "\x1b[0m"
+
+void printColorLn(string color, string msg) {
+  cout << color << msg << RESET << endl;
+}
+
 
 string readString()
 {
@@ -44,6 +60,7 @@ public:
   {
     do
     {
+      cout << "qual e o tipo de veiculo (carro ou moto)" << endl;
       tipo = readString();
     } while (tipo != "carro" && tipo != "Carro" && tipo != "moto" &&
              tipo != "Moto");
@@ -76,6 +93,17 @@ public:
   }
 
   // aqui estao as variaveis, onde vao pegas as infos do carro
+
+  void print(){
+    // ANCHOR veiculoprint
+      cout << "A placa do veiculo e:"<< getPlaca();
+      cout << "O ano do veiculo e:"<< getAno();
+      cout << "O preco do veiculo e:" << getPreco();
+      cout << "O modelo do veiculo e:" << getModelo();  //arruamr cosmeticamnete
+      cout << "A marca do veiculo e:" <<getMarca();
+      cout << "O veiculo e um(a):" <<getTipo();
+      cout << "A obs do veiculo e:" << getObs() << endl;  
+  }
 };
 int Veiculo::contador = 0;
 
@@ -84,7 +112,7 @@ int menu()
   int aux;
   do
   {
-    cout << "Ola, aqui em baixo esta nosso menu, escolha a opcao" << endl;
+    printColorLn (MAGENTA, "Ola, aqui em baixo esta nosso menu, escolha a opcao");
     cout << "[1] - para listar todos os veiculos" << endl;
     cout << "[2] - para pesquisar os veiculos" << endl;     // feito
     cout << "[3] - para cadastrar um novo veiculo" << endl; // feito
@@ -130,7 +158,7 @@ public:
 
   void Cadastrar()
   {
-
+    // ANCHOR cadastro
     cout << "qual e a placa do veiculo" << endl; // com a placa na classe provada
     VetVeiculos[Veiculo::contador].setPlaca(readString());
     cout << "qual e o ano do veiculo" << endl; // ano
@@ -141,31 +169,36 @@ public:
     VetVeiculos[Veiculo::contador].setModelo(readString());
     cout << "qual e a marca do veiculo" << endl; // marca
     VetVeiculos[Veiculo::contador].setMarca(readString());
-    cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
+    // cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
     VetVeiculos[Veiculo::contador].setTipo();
     cout << "tem alguma obs" << endl; // obs
     VetVeiculos[Veiculo::contador].setObs(readString());
 
     Veiculo::contador++;
 
-    // arrumar a parte de printar no arquivo
-    cout << "O carro foi cadastrado!" << endl;
+    printColorLn(GREEN, "O carro foi cadastrado!");
     cout << endl;
   }
 
   void Excluir(Veiculo excluir) {
+
+    // ANCHOR excluir
+
     // deletar o carro do arquivo
     if (Veiculo::contador == 0)
     {
-     cout << "erro lista vazia" << endl;
+      printColorLn(RED, "erro lista vazia");
      return;
     }
 
     // buscando a posicao do carro a ser excluido
     bool found = false;
     int i;
-    for (i = 0; !found && i < Veiculo::contador; i++)
+    cout << Veiculo::contador << endl;
+    cout << VetVeiculos[0].getPlaca() << endl;
+    for (i = 0; !found && i < Veiculo::contador-1; i++)
     {
+      cout << "A" << endl;
       if (VetVeiculos[i].getPlaca() == excluir.getPlaca())
       {
         found = true;
@@ -173,23 +206,30 @@ public:
       }
     }
     Veiculo::contador--;
+
+    printColorLn(GREEN, "carro excluido com sucesso!");
   }
 
   void Listar()
   {
+
+  //ANCHOR listar 
+    printColorLn(YELLOW, "aqui estao todos os carros cadastrados");
+
+    // fazer um if para lista vazia
+    if (Veiculo::contador == 0)
+    {
+      cout << "A lista esta vazia" << endl;
+    }
+    
     for (int i = 0; i < Veiculo::contador; i++)
     {
-      cout << VetVeiculos[i].getPlaca() << endl;
-      cout << VetVeiculos[i].getAno() << endl;
-      cout << VetVeiculos[i].getPreco() << endl;
-      cout << VetVeiculos[i].getModelo() << endl;
-      cout << VetVeiculos[i].getMarca() << endl;
-      cout << VetVeiculos[i].getTipo() << endl;
-      cout << VetVeiculos[i].getObs() << endl;
+      VetVeiculos[i].print();
     }
   }
 
   void PrintaNoArquivo(){
+    // ANCHOR printnoarquivo
     // para printar no arquivo
     FILE *arquivo = fopen("veiculos.txt", "w");
     for (int i = 0; i < Veiculo::contador; i++)
@@ -200,7 +240,7 @@ public:
       fprintf(arquivo, "%s; ", VetVeiculos[i].getModelo().c_str());
       fprintf(arquivo, "%s; ", VetVeiculos[i].getMarca().c_str());
       fprintf(arquivo, "%s; ", VetVeiculos[i].getTipo().c_str());
-      fprintf(arquivo, "%s; ", VetVeiculos[i].getObs().c_str());
+      fprintf(arquivo, "%s;\n", VetVeiculos[i].getObs().c_str());
 
     }
     
@@ -208,9 +248,10 @@ public:
   }
 
   Veiculo Pesquisar(){
+    // ANCHOR pesquisar
     // pesquisa atravez da placa do carro
 
-    cout << "digite sua placa" << endl;
+    printColorLn(YELLOW, "digite sua placa");
 
     string placa = readString();
 
@@ -222,20 +263,20 @@ public:
       }
     }
 
-  throw "carro nao encontrado";
+  throw string("carro nao encontrado");
   }
 };
 
 int main()
 {
-
+  // ANCHOR main
   ListaVeiculos lista;
 
   // switch case com a variavel do menu
   int Menu;
+  Veiculo veiculo; // pensar mais sobre dps
   while ((Menu = menu()) != 0)
   {
-    Veiculo veiculo; // pensar mais sobre dps
     switch (Menu)
     {
     case 1:
@@ -247,10 +288,11 @@ int main()
       try
       {
         veiculo = lista.Pesquisar();
+        veiculo.print();
       }
-      catch (exception erro)
+      catch (string erro)
       {
-        cout << erro.what() << endl;
+        printColorLn(RED, "erro, carro nao encontrado");
       }
       break;
     case 3:
@@ -263,6 +305,8 @@ int main()
       break;
     case 5:
       /* excluir um carro ja existente */
+      veiculo = lista.Pesquisar();
+      veiculo.print();
       lista.Excluir(veiculo);
       break;
     default:
@@ -274,15 +318,3 @@ int main()
 
   return 0;
 }
-
-/*
-1) os carros do arquivo ficaram estatcos pos a mudanca?
-ou vao sofrer alterao dentro do arquivo?
-
-2) o programa vai comecar, o vetor vazio, ai o vetor vai ser prenchido atravez do arquivo,
-linha por linha e vai salvando cada info de forma diferente? (int, float, char...ler o arquivo
-de texto e preencher os atributos da class)
-
-3)pode usar em json? tipo, salvar em um json e dps colocar para o structure
-
-*/
