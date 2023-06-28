@@ -7,16 +7,20 @@ using namespace std;
 
 // FRUFRU
 // ANCHOR frufru
-#define RED "\x1b[31m"
-#define GREEN "\x1b[32m"
-#define YELLOW "\x1b[33m"
-#define BLUE "\x1b[34m"
-#define MAGENTA "\x1b[35m"
-#define CYAN "\x1b[36m"
-#define RESET "\x1b[0m"
+#define RED (string)"\x1b[31m"
+#define GREEN (string)"\x1b[32m"
+#define YELLOW (string)"\x1b[33m"
+#define BLUE (string)"\x1b[34m"
+#define MAGENTA (string)"\x1b[35m"
+#define CYAN (string)"\x1b[36m"
+#define RESET (string)"\x1b[0m"
 
 void printColorLn(string color, string msg) {
   cout << color << msg << RESET << endl;
+}
+
+void clear(){
+  system("cls");
 }
 
 
@@ -72,7 +76,19 @@ public:
   {
     obs = novaObs;
   }
-  void setPlaca(string placa) { this->placa = placa; }
+  void setPlaca() {
+    string placa;
+    bool   invalid = false;
+
+    string errorMsg = RED + "Placa inválida, " + RESET + "tente novamente: ";
+
+    do {
+      if (invalid) cout << errorMsg;
+      placa = readString();
+    } while ((invalid = placa.length() != 7));
+
+        this->placa = placa;
+    }
   void setPreco(string preco)
   {
     this->preco = stof(preco); // trocando de string para float
@@ -97,16 +113,12 @@ public:
 
   void print(){
     // ANCHOR veiculoprint
-      cout << "A placa do veiculo e:"<< getPlaca();
-      cout << "O ano do veiculo e:"<< getAno();
-      cout << "O preco do veiculo e:" << getPreco();
-      cout << "O modelo do veiculo e:" << getModelo();  //arruamr cosmeticamnete
-      cout << "A marca do veiculo e:" <<getMarca();
-      cout << "O veiculo e um(a):" <<getTipo();
-      cout << "A obs do veiculo e:" << getObs() << endl;  
+    printf("%10s %10s %10s %10s %10s %10s %10s \n", "placa", "ano", "preco", "modelo", "marca", "tipo", "obs");
+    printf("%10s %10d %10.2f %10s %10s %10s %10s\n", getPlaca().c_str(), getAno(),getPreco(),getModelo().c_str(),getMarca().c_str(),getTipo().c_str(),getObs().c_str());
   }
 };
 int Veiculo::contador = 0;
+
 
 int menu()
 {
@@ -146,10 +158,6 @@ void excluir(Veiculo excluir)
   fclose(arquivo);
 }
 
-void printarArquivo()
-{
- 
-}
 
 class ListaVeiculos
 {
@@ -157,7 +165,27 @@ class ListaVeiculos
 
 public:
 
+  ListaVeiculos(){
+    getDataBase();
+  }
+
 // falta o editar e o ler do arquivo e passar para o vetor
+
+void getDataBase(){
+  FILE *arquivo = fopen("veiculos.txt", "r");
+
+  // char carroX[500];
+  
+  while (!feof(arquivo));
+  {
+    // fgets(carroX, sizeof(carroX), arquivo);
+    
+
+  }
+  
+
+  fclose(arquivo);
+}
 
   void Cadastrar()
   {
@@ -165,32 +193,35 @@ public:
     if (Veiculo::contador == 500)
     {
       printColorLn(RED, "atingiu o maximo de veiculos cadastrados");
-      
-    }else{
-      cout << "qual e a placa do veiculo" << endl; // com a placa na classe provada
-      VetVeiculos[Veiculo::contador].setPlaca(readString());
-      cout << "qual e o ano do veiculo" << endl; // ano
-      VetVeiculos[Veiculo::contador].setAno();
-      cout << "qual e o preco do veiculo" << endl; // preco
-      VetVeiculos[Veiculo::contador].setPreco(readString());
-      cout << "qual e o modelo do veiculo" << endl; // modelo
-      VetVeiculos[Veiculo::contador].setModelo(readString());
-      cout << "qual e a marca do veiculo" << endl; // marca
-      VetVeiculos[Veiculo::contador].setMarca(readString());
-      // cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
-      VetVeiculos[Veiculo::contador].setTipo();
-      cout << "tem alguma obs" << endl; // obs
-      VetVeiculos[Veiculo::contador].setObs(readString());
-      Veiculo::contador++;
-      printColorLn(GREEN, "O carro foi cadastrado!");
-      cout << endl;
+      return;
     }
+
+    clear();
+
+    cout << "qual e a placa do veiculo" << endl; // com a placa na classe provada
+    VetVeiculos[Veiculo::contador].setPlaca();
+    cout << "qual e o ano do veiculo" << endl; // ano
+    VetVeiculos[Veiculo::contador].setAno();
+    cout << "qual e o preco do veiculo" << endl; // preco
+    VetVeiculos[Veiculo::contador].setPreco(readString());
+    cout << "qual e o modelo do veiculo" << endl; // modelo
+    VetVeiculos[Veiculo::contador].setModelo(readString());
+    cout << "qual e a marca do veiculo" << endl; // marca
+    VetVeiculos[Veiculo::contador].setMarca(readString());
+    // cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
+    VetVeiculos[Veiculo::contador].setTipo();
+    cout << "tem alguma obs" << endl; // obs
+    VetVeiculos[Veiculo::contador].setObs(readString());
+    Veiculo::contador++;
+    printColorLn(GREEN, "O carro foi cadastrado!");
+    cout << endl;
+    
     
   }
 
+    // ANCHOR excluir
   void Excluir(Veiculo excluir) {
 
-    // ANCHOR excluir
 
     // deletar o carro do arquivo
     if (Veiculo::contador == 0)
@@ -206,7 +237,7 @@ public:
     cout << VetVeiculos[0].getPlaca() << endl;
     for (i = 0; !found && i < Veiculo::contador-1; i++)
     {
-      cout << "A" << endl;
+      
       if (VetVeiculos[i].getPlaca() == excluir.getPlaca())
       {
         found = true;
@@ -218,10 +249,10 @@ public:
     printColorLn(GREEN, "carro excluido com sucesso!");
   }
 
+  //ANCHOR listar 
   void Listar()
   {
 
-  //ANCHOR listar 
     printColorLn(YELLOW, "aqui estao todos os carros cadastrados");
 
     // fazer um if para lista vazia
@@ -255,8 +286,8 @@ public:
     fclose(arquivo);
   }
 
-  Veiculo Pesquisar(){
     // ANCHOR pesquisar
+  Veiculo Pesquisar(){
     // pesquisa atravez da placa do carro
 
     printColorLn(YELLOW, "digite sua placa");
@@ -271,7 +302,7 @@ public:
       }
     }
 
-  throw string("carro nao encontrado");
+  throw string(RED + "carro nao encontrado" + RESET);
   }
 };
 
@@ -295,12 +326,11 @@ int main()
       /* pesquisar todos os veiculos */
       try
       {
-        veiculo = lista.Pesquisar();
-        veiculo.print();
+        lista.Pesquisar().print();
       }
       catch (string erro)
       {
-        printColorLn(RED, "erro, carro nao encontrado");
+        cout << erro << endl;
       }
       break;
     case 3:
@@ -313,9 +343,14 @@ int main()
       break;
     case 5:
       /* excluir um carro ja existente */
-      veiculo = lista.Pesquisar();
-      veiculo.print();
-      lista.Excluir(veiculo);
+      try
+      {
+        lista.Excluir(lista.Pesquisar());
+      }
+      catch (string erro)
+      {
+        cout << erro << endl;
+      }
       break;
     default:
       break;

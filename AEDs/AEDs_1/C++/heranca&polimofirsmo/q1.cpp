@@ -2,50 +2,54 @@
 
 using namespace std;
 
-class animal{
+class animalestimacao{
     string nome;
     string raca;
     public:
-    // setteres
+    // Setter para o nome
+    void setNome(const string& novoNome) {
+        nome = novoNome;
+    }
+    // Setter para a raça
+    void setRaca(const string& novaRaca) {
+        raca = novaRaca;
+    }
 
-    void setRaca(string raca){
-        raca = raca;
-    }
-    void setNome(string nome){
-        nome = nome;
-    }
-    // getteres
-
-    string getRaca(){
-        return raca;
-    }
-    string getNome(){
+    // Getter para o nome
+    string getNome() const {
         return nome;
     }
-
-    // comandos da questao
-    void caminha(){
-
+    // Getter para a raça
+    string getRaca() const {
+        return raca;
     }
+
+    void caminha(){
+        cout << "caminhando" << endl;
+    }
+    
 };
 
-class cachorro{
+class cachorro:public animalestimacao{
     public:
     void late(){
-
+        cout << "auau" << endl;
     }
 };
-
-class gato{
+class gato:public animalestimacao{
     public:
     void mia(){
-
+        cout << "miau" << endl;
     }
 };
+
 
 int main() {
 
-
+    cachorro dog;
+    dog.setNome("toto");
+    dog.setRaca("labrador");
+    dog.late();
 
     cout << "\n------- | FIM DO PROGRAMA | -------\n\n";
     return 0;

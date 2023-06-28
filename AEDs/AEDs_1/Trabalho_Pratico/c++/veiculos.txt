@@ -1,2 +1,1 @@
-123; 123; 123.00; 123; 123; carro; ;
-ccd "c:\Users\giuse\OneDrive\Desktop\puc\1 periodo\aeds\aeds\AEDs\AEDs_1\Trabalho_Pratico\c++\" ; if ($?) { g++ catalogo.cpp -o catalogo } ; if ($?) { .\catalogo }; 0; 1.00; 3; 123; carro; a;
+1234567; 123; 123.00; 123; 123; carro; ;
