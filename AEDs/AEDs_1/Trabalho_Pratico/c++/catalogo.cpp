@@ -22,6 +22,7 @@ void printColorLn(string color, string msg) {
 
 string readString()
 {
+  // ANCHOR readstring
   // ler ate o fim da string, contando os espacos
   string str;
   getline(cin, str);
@@ -109,6 +110,7 @@ int Veiculo::contador = 0;
 
 int menu()
 {
+  // ANCHOR menu
   int aux;
   do
   {
@@ -128,6 +130,7 @@ int menu()
 void excluir(Veiculo excluir)
 {
   // aqui serve para ezvasair o vetor
+  // ANCHOR excluir
 
   FILE *arquivo = fopen("veiculos.txt", "a");
 
@@ -159,25 +162,30 @@ public:
   void Cadastrar()
   {
     // ANCHOR cadastro
-    cout << "qual e a placa do veiculo" << endl; // com a placa na classe provada
-    VetVeiculos[Veiculo::contador].setPlaca(readString());
-    cout << "qual e o ano do veiculo" << endl; // ano
-    VetVeiculos[Veiculo::contador].setAno();
-    cout << "qual e o preco do veiculo" << endl; // preco
-    VetVeiculos[Veiculo::contador].setPreco(readString());
-    cout << "qual e o modelo do veiculo" << endl; // modelo
-    VetVeiculos[Veiculo::contador].setModelo(readString());
-    cout << "qual e a marca do veiculo" << endl; // marca
-    VetVeiculos[Veiculo::contador].setMarca(readString());
-    // cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
-    VetVeiculos[Veiculo::contador].setTipo();
-    cout << "tem alguma obs" << endl; // obs
-    VetVeiculos[Veiculo::contador].setObs(readString());
-
-    Veiculo::contador++;
-
-    printColorLn(GREEN, "O carro foi cadastrado!");
-    cout << endl;
+    if (Veiculo::contador == 500)
+    {
+      printColorLn(RED, "atingiu o maximo de veiculos cadastrados");
+      
+    }else{
+      cout << "qual e a placa do veiculo" << endl; // com a placa na classe provada
+      VetVeiculos[Veiculo::contador].setPlaca(readString());
+      cout << "qual e o ano do veiculo" << endl; // ano
+      VetVeiculos[Veiculo::contador].setAno();
+      cout << "qual e o preco do veiculo" << endl; // preco
+      VetVeiculos[Veiculo::contador].setPreco(readString());
+      cout << "qual e o modelo do veiculo" << endl; // modelo
+      VetVeiculos[Veiculo::contador].setModelo(readString());
+      cout << "qual e a marca do veiculo" << endl; // marca
+      VetVeiculos[Veiculo::contador].setMarca(readString());
+      // cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
+      VetVeiculos[Veiculo::contador].setTipo();
+      cout << "tem alguma obs" << endl; // obs
+      VetVeiculos[Veiculo::contador].setObs(readString());
+      Veiculo::contador++;
+      printColorLn(GREEN, "O carro foi cadastrado!");
+      cout << endl;
+    }
+    
   }
 
   void Excluir(Veiculo excluir) {
