@@ -48,7 +48,7 @@ private:
 public:
   static int contador;
 
-  // M√©todos get
+  // MÈtodos get
   string getModelo() { return modelo; }
   string getMarca() { return marca; }
   string getTipo() { return tipo; }
@@ -57,7 +57,7 @@ public:
   int getAno() { return ano; }
   string getPlaca() { return placa; }
 
-  // M√©todos set
+  // MÈtodos set
 
   void setModelo(string novoModelo) { modelo = novoModelo; }
   void setMarca(string novaMarca) { marca = novaMarca; }
@@ -81,7 +81,7 @@ public:
     string placa;
     bool invalid = false;
 
-    string errorMsg = RED + "Placa inv√°lida, " + RESET + "tente novamente: ";
+    string errorMsg = RED + "Placa inv·lida, " + RESET + "tente novamente: ";
 
     do
     {
@@ -135,7 +135,7 @@ public:
   void print()
   {
     // ANCHOR veiculoprint
-    printf("%10s %10d %10.2f %10s %10s %10s %15s\n", getPlaca().c_str(), getAno(), getPreco(), getModelo().c_str(), getMarca().c_str(), getTipo().c_str(), getObs().c_str());
+    printf("%10s %10d %10.2f %10s %10s %10s %10s\n", getPlaca().c_str(), getAno(), getPreco(), getModelo().c_str(), getMarca().c_str(), getTipo().c_str(), getObs().c_str());
   }
 };
 int Veiculo::contador = 0;
@@ -236,7 +236,7 @@ public:
       cout << "A lista esta vazia" << endl;
       return;
     }
-    printf("temos: %d carros no sistema.\n", Veiculo::contador);
+    printf("%d\n", Veiculo::contador);
     printf("%10s %10s %10s %10s %10s %10s %10s \n", "placa", "ano", "preco", "modelo", "marca", "tipo", "obs");
 
     for (int i = 0; i < Veiculo::contador; i++)
@@ -261,10 +261,10 @@ public:
     {
 
       fscanf(arquivo, "%[^;]%*c", placa);
-      fscanf(arquivo, "%[^;]%*c", marca);
-      fscanf(arquivo, "%[^;]%*c", modelo);
       fscanf(arquivo, "%d%*c", &ano);
       fscanf(arquivo, "%f%*c", &preco);
+      fscanf(arquivo, "%[^;]%*c", marca);
+      fscanf(arquivo, "%[^;]%*c", modelo);
       fscanf(arquivo, "%[^;]%*c", tipo);
       fscanf(arquivo, "%[^;]%*c", obs);
 
@@ -297,9 +297,9 @@ public:
     fclose(arquivo);
   }
 
-  // ANCHOR printnoarquivo
   void PrintaNoArquivo()
   {
+    // ANCHOR printnoarquivo
     // para printar no arquivo
     FILE *arquivo = fopen("veiculos.txt", "w");
 
@@ -415,7 +415,6 @@ int main()
         break;
       case 2:
         /* pesquisar todos os veiculos */
-        clear();
         try
         {
           lista.Pesquisar().print();
@@ -426,12 +425,10 @@ int main()
         }
       break;
       case 3:
-      clear();
         /* cadastro de um novo veiculo */
         lista.Cadastrar();
       break;
       case 4:
-      clear();
         /* para ediatr o cadastro dos veiculos */
         try
         {
@@ -443,7 +440,6 @@ int main()
         }
       break;
       case 5:
-      clear();
         /* excluir um carro ja existente */
         try
         {
@@ -458,7 +454,6 @@ int main()
   }
   lista.PrintaNoArquivo();
   cout << "tachu, ate mais =D" << endl;
-  cout << "feito pelo aluno giuseppe sena cordeiro" << endl;
   return 0;
 }
 
