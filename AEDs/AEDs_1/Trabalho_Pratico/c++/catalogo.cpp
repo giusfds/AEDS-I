@@ -387,7 +387,7 @@ public:
     veiculo.setModelo(readString());
     cout << "qual e a marca do veiculo" << endl; // marca
     veiculo.setMarca(readString());
-    cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
+    // cout << "qual e o tipo de veiculo (carro ou moto)" << endl; // tipo
     veiculo.setTipo();
     cout << "tem alguma obs" << endl; // obs
     veiculo.setObs(readString());
@@ -462,8 +462,3 @@ int main()
   return 0;
 }
 
-
-/*
-
-3) colocar 3 veiculos no arquivo antes de mandar
-*/
