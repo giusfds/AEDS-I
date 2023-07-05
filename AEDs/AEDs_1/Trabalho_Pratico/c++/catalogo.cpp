@@ -146,15 +146,15 @@ int menu()
   int aux;
   do
   {
-    // printColorLn(MAGENTA, "Ola, aqui em baixo esta nosso menu, escolha a opcao");  opcao com frufru (nn roda no CB)
-    cout << "Ola, aqui em baixo esta nosso menu, escolha a opcao" << endl;
+    printColorLn(MAGENTA, "Ola, aqui em baixo esta nosso menu, escolha a opcao");  //opcao com frufru (nn roda no CB)
+    // cout << "Ola, aqui em baixo esta nosso menu, escolha a opcao" << endl;
     cout << "[1] - para listar todos os veiculos" << endl;
     cout << "[2] - para pesquisar os veiculos" << endl;     // feito
     cout << "[3] - para cadastrar um novo veiculo" << endl; // feito
     cout << "[4] - para editar o cadastro do veiculo" << endl;
     cout << "[5] - excluir um carro ja existente" << endl;
     cout << "[0] - sair do programa" << endl; // feito
-
+    
     scanf("%d%*c", &aux);
   } while (aux > 5 && aux < 0);
   return aux;
@@ -457,8 +457,9 @@ int main()
     }
   }
   lista.PrintaNoArquivo();
-  cout << "tachu, ate mais =D" << endl;
+  cout << "tchau, ate mais =D" << endl;
   cout << "feito pelo aluno giuseppe sena cordeiro" << endl;
+  // printColorLn(BLUE, "ola mundo legal");
   return 0;
 }
 
