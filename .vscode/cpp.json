@@ -31,9 +31,19 @@
         "body" : "class ${1}{${0}};",
         "description": "class template"
     },
+    "Printf1 Template": {
+        "prefix": "print",
+        "body": "printf(\"${1}\\n\"${2});${0}",
+        "description": "Printf Template"
+    },
     "this":{
         "prefix": "thi",
         "body": "this -> ${0};",
         "description": "this template"
+    },
+    "endl":{
+        "prefix": "endl",
+        "body": "cout << endl;",
+        "description": "endl template"
     }
 }
