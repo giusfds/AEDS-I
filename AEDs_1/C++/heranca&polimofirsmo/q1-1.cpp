@@ -77,6 +77,7 @@ int main()
     cat.setNome("neguion");
     cout << "nome:" << cat.getNome() << endl;
     cout << "raca:" << cat.getRaca() << endl;
+
     
 
     cout << "\n------- | FIM DO PROGRAMA | -------\n\n";
