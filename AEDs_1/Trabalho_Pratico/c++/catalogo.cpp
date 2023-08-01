@@ -459,7 +459,6 @@ int main()
   lista.PrintaNoArquivo();
   cout << "tchau, ate mais =D" << endl;
   cout << "feito pelo aluno giuseppe sena cordeiro" << endl;
-  // printColorLn(BLUE, "ola mundo legal");
   return 0;
 }
 

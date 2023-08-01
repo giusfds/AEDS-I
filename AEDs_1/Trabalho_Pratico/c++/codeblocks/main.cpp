@@ -48,7 +48,7 @@ private:
 public:
   static int contador;
 
-  // Métodos get
+  // Mï¿½todos get
   string getModelo() { return modelo; }
   string getMarca() { return marca; }
   string getTipo() { return tipo; }
@@ -57,7 +57,7 @@ public:
   int getAno() { return ano; }
   string getPlaca() { return placa; }
 
-  // Métodos set
+  // Mï¿½todos set
 
   void setModelo(string novoModelo) { modelo = novoModelo; }
   void setMarca(string novaMarca) { marca = novaMarca; }
@@ -81,7 +81,7 @@ public:
     string placa;
     bool invalid = false;
 
-    string errorMsg = RED + "Placa inválida, " + RESET + "tente novamente: ";
+    string errorMsg = RED + "Placa invï¿½lida, " + RESET + "tente novamente: ";
 
     do
     {
@@ -457,8 +457,3 @@ int main()
   return 0;
 }
 
-
-/*
-
-3) colocar 3 veiculos no arquivo antes de mandar
-*/
