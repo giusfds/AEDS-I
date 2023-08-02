@@ -141,5 +141,5 @@ Versao Teste
  0.3 0.1 ( OK ) teste da tarefa parcial
  0.4 0.1 ( OK ) teste do apanhar marcador
  0.5 0.1 ( OK ) teste do colocar marcador
- 0.6 01. ( OK ) teste da repeticao do movimento
+ 0.6 0.1 ( OK ) teste da repeticao do movimento
 */
