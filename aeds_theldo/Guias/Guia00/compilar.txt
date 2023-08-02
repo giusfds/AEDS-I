@@ -1,0 +1,8 @@
+                 _ o arquivo que vai ser gerado
+                |
+gcc -o AED1 AED1.c
+        |_nome do EXE
+
+para execultar o execultavel: .\AEDS1
+
+sempre colocar o comentario no final da questao, caso tenha alguma duvida
