@@ -1,6 +1,6 @@
 /*
  Guia_0102 - v0.0.2 - 02 / 08 / 2023
- Author: Giuseppe Sena Cordeiro
+ Author: Giuseppe Sena Cordeiro - 801779
  Para compilar em uma janela de comandos (terminal):
 
  No Linux : g++ -o Guia0102 ./Guia0102.cpp

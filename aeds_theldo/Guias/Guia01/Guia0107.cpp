@@ -1,13 +1,13 @@
 /*
- Guia0103 - v0.0.3 - 02 / 08 / 2023
- Author: Giuseppe Sena Cordiero - 801779
+ Guia0107 - v0.0. - 02 / 08 / 2004
+ Author: Giuseppe Sena Corideiro - 801779
  Para compilar em uma janela de comandos (terminal):
 
- No Linux : g++ -o Guia0103 ./Guia0103.cpp
- No Windows: g++ -o Guia0103 Guia0103.cpp
+ No Linux : g++ -o Guia0107 ./Guia0107.cpp
+ No Windows: g++ -o Guia0107 Guia0107.cpp
  Para executar em uma janela de comandos (terminal):
- No Linux : ./Guia0103
- No Windows: Guia0103
+ No Linux : ./Guia0107
+ No Windows: Guia0107
 */
 // lista de dependencias
 #include "karel.hpp"
@@ -51,14 +51,27 @@ class MyRobot : public Robot
  } // end if
  } // end turnRight ( )
  /**
+ moveN - Metodo para mover certa quantidade de passos.
+ @param steps - passos a serem dados.
+ */
+ void moveN( int steps )
+ {
+ // testar se a quantidade de passos e' maior que zero
+ if ( steps > 0 )
+ {
+ // dar um passo
+ move( );
+ // tentar fazer de novo, com menos um passo dessa vez
+ moveN ( steps - 1 );
+ } // end if
+ } // end moveN( )
+ /**
  doPartialTask - Metodo para descrever parte de uma tarefa.
  */
  void doPartialTask( )
  {
  // especificar acoes dessa parte da tarefa
- move( );
- move( );
- move( );
+ moveN( 3 );
  turnLeft( );
  } // end doPartialTask( )
  /**
@@ -69,7 +82,19 @@ class MyRobot : public Robot
  // especificar acoes da tarefa
  doPartialTask( );
  doPartialTask( );
+ // testar se ha' marcador antes ...
+ if ( nextToABeeper( ) )
+ {
+ // ... de tentar carrega-lo
+ pickBeeper( );
+ } // end if
  doPartialTask( );
+ // testar se carrega marcador antes ...
+ if ( beepersInBag( ) )
+ {
+ // ... de tentar descarrega-lo
+ putBeeper( );
+ } // end if
  doPartialTask( );
  turnLeft( );
  // encerrar
@@ -88,11 +113,11 @@ int main ( )
 // antes de qualquer outra coisa
 // (depois de criado, podera' ser comentado)
  world->create ( "" ); // criar o mundo
- decorateWorld ( "Guia0103.txt" );
+ decorateWorld ( "Guia0107.txt" );
  world->show ( );
 // preparar o ambiente para uso
  world->reset ( ); // limpar configuracoes
- world->read ( "Guia0103.txt" );// ler configuracao atual para o ambiente
+ world->read ( "Guia0107.txt" );// ler configuracao atual para o ambiente
  world->show ( ); // mostrar a configuracao atual
  set_Speed ( 3 ); // definir velocidade padrao
 // criar robo
@@ -108,19 +133,25 @@ int main ( )
  getchar ( );
  return ( 0 );
 } // end main ( )
-// ------------------------------------------- testes
+// ---------------------------------------------- testes
 /*
 ---------------------------------------------- documentacao complementar
-karel agora faz um circulo 4x4
 ---------------------------------------------- notas / observacoes / comentarios
-continua sendo dificil de entender, nao sei se e para ele parar no ponto (1), porem ele chegou no objetivo e saiu dele
 ---------------------------------------------- previsao de testes
 ---------------------------------------------- historico
+karel nao realizou novas mudancas nas estradas e avenitas, apenas pegou o (1) e deixou no mesmo
+lugar do ultimo guia
+
 Versao Data Modificacao
- 0.1.3 02/08 esboco
+ 0.1 02/08 esboco
 ---------------------------------------------- testes
 Versao Teste
  0.1 0.1 ( OK ) teste inicial
  0.2 0.1 ( OK ) teste da tarefa
  0.3 0.1 ( OK ) teste da tarefa parcial
+ 0.4 0.1 ( OK ) teste do apanhar marcador
+ 0.5 0.1 ( OK ) teste do colocar marcador
+0.6 01. ( OK ) teste da repeticao do movimento
+0.7 01. ( ok ) teste com marcador na posicao (4,4)
+02. ( ok ) teste sem marcador na posicao (4,4)
 */

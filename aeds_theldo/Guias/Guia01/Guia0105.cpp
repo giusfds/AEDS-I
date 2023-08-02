@@ -1,13 +1,13 @@
 /*
- Guia0103 - v0.0.3 - 02 / 08 / 2023
- Author: Giuseppe Sena Cordiero - 801779
+ Guia0105 - v0.0. - 02 / 08 / 2024
+ Author: Giuseppe Sena Cordeiro - 801779
  Para compilar em uma janela de comandos (terminal):
 
- No Linux : g++ -o Guia0103 ./Guia0103.cpp
- No Windows: g++ -o Guia0103 Guia0103.cpp
+ No Linux : g++ -o Guia0105 ./Guia0105.cpp
+ No Windows: g++ -o Guia0105 Guia0105.cpp
  Para executar em uma janela de comandos (terminal):
- No Linux : ./Guia0103
- No Windows: Guia0103
+ No Linux : ./Guia0105
+ No Windows: Guia0105
 */
 // lista de dependencias
 #include "karel.hpp"
@@ -69,7 +69,9 @@ class MyRobot : public Robot
  // especificar acoes da tarefa
  doPartialTask( );
  doPartialTask( );
+ pickBeeper( ); // apanhar marcador
  doPartialTask( );
+ putBeeper( ); // colocar marcador
  doPartialTask( );
  turnLeft( );
  // encerrar
@@ -88,11 +90,11 @@ int main ( )
 // antes de qualquer outra coisa
 // (depois de criado, podera' ser comentado)
  world->create ( "" ); // criar o mundo
- decorateWorld ( "Guia0103.txt" );
+ decorateWorld ( "Guia0105.txt" );
  world->show ( );
 // preparar o ambiente para uso
  world->reset ( ); // limpar configuracoes
- world->read ( "Guia0103.txt" );// ler configuracao atual para o ambiente
+ world->read ( "Guia0105.txt" );// ler configuracao atual para o ambiente
  world->show ( ); // mostrar a configuracao atual
  set_Speed ( 3 ); // definir velocidade padrao
 // criar robo
@@ -111,16 +113,19 @@ int main ( )
 // ------------------------------------------- testes
 /*
 ---------------------------------------------- documentacao complementar
-karel agora faz um circulo 4x4
 ---------------------------------------------- notas / observacoes / comentarios
-continua sendo dificil de entender, nao sei se e para ele parar no ponto (1), porem ele chegou no objetivo e saiu dele
 ---------------------------------------------- previsao de testes
 ---------------------------------------------- historico
+karel largou o ponto (1) no espaco 1/4
+
+
 Versao Data Modificacao
- 0.1.3 02/08 esboco
+ 0.1 02/08 esboco
 ---------------------------------------------- testes
 Versao Teste
  0.1 0.1 ( OK ) teste inicial
  0.2 0.1 ( OK ) teste da tarefa
  0.3 0.1 ( OK ) teste da tarefa parcial
+ 0.4 0.1 ( OK ) teste do apanhar marcador
+ 0.5 0.1 ( OK ) teste do colocar marcador
 */
