@@ -1,13 +1,13 @@
 /*
- Guia0108 - v0.0. - 02 / 08 / 2023
- Author: Giuseppe Sena Cordeiro
+ Guia0110 - v0.0. - 02 / 08 / 2023
+ Author: Giuseppe Sena Cordeiro - 801779
  Para compilar em uma janela de comandos (terminal):
 
- No Linux : g++ -o Guia0108 ./Guia0108.cpp
- No Windows: g++ -o Guia0108 Guia0108.cpp
+ No Linux : g++ -o Guia0110 ./Guia0110.cpp
+ No Windows: g++ -o Guia0110 Guia0110.cpp
  Para executar em uma janela de comandos (terminal):
- No Linux : ./Guia0108
- No Windows: Guia0108
+ No Linux : ./Guia0110
+ No Windows: Guia0110
 */
 // lista de dependencias
 #include "karel.hpp"
@@ -56,13 +56,13 @@ class MyRobot : public Robot
  */
  void moveN( int steps )
  {
- // testar se a quantidade de passos e' maior que zero
- if ( steps > 0 )
+ // definir dado local
+ int step = 0;
+ // repetir contando e testando ate' atingir a quantidade de passos
+ for ( step = 1; step <= steps; step = step + 1 ) // outra forma de repetir
  {
- // dar um passo
+ // dar um passo por vez
  move( );
- // tentar fazer de novo, com menos um passo dessa vez
- moveN ( steps - 1 );
  } // end if
  } // end moveN( )
  /**
@@ -113,11 +113,11 @@ int main ( )
 // antes de qualquer outra coisa
 // (depois de criado, podera' ser comentado)
  world->create ( "" ); // criar o mundo
- decorateWorld ( "Guia0108.txt" );
+ decorateWorld ( "Guia0110.txt" );
  world->show ( );
 // preparar o ambiente para uso
  world->reset ( ); // limpar configuracoes
- world->read ( "Guia0108.txt" );// ler configuracao atual para o ambiente
+ world->read ( "Guia0110.txt" );// ler configuracao atual para o ambiente
  world->show ( ); // mostrar a configuracao atual
  set_Speed ( 3 ); // definir velocidade padrao
 // criar robo
@@ -133,30 +133,28 @@ int main ( )
  getchar ( );
  return ( 0 );
 } // end main ( )
-// -------------------------------------------- testes
+// ---------------------------------------------- testes
 /*
 ---------------------------------------------- documentacao complementar
 ---------------------------------------------- notas / observacoes / comentarios
 ---------------------------------------------- previsao de testes
 ---------------------------------------------- historico
+karel nao realizou novas mudancas nas estradas e avenitas, apenas pegou o (1) e deixou no mesmo
+lugar do ultimo guia
 Versao Data Modificacao
  0.1 02/08 esboco
 ---------------------------------------------- testes
-karel nao realizou novas mudancas nas estradas e avenitas, apenas pegou o (1) e deixou no mesmo
-lugar do ultimo guia
-
 Versao Teste
  0.1 0.1 ( OK ) teste inicial
  0.2 0.1 ( OK ) teste da tarefa
  0.3 0.1 ( OK ) teste da tarefa parcial
  0.4 0.1 ( OK ) teste do apanhar marcador
  0.5 0.1 ( OK ) teste do colocar marcador
- 0.6 0.1 ( OK ) teste da repeticao do movimento
- 0.7 0.1 ( OK ) teste com marcador na posicao (4,4)
- 0.7 0.2 ( OK ) teste sem marcador na posicao (4,4)
- 0.8 0.1 ( OK ) teste com a quantidade de marcadores
-
-
-
-parei na pagina 35 do guia
+0.6 01. ( OK ) teste da repeticao do movimento
+0.7 01. ( OK ) teste com marcador na posicao (4,4)
+02. ( OK ) teste sem marcador na posicao (4,4)
+ 0.8 01. ( OK ) teste com a quantidade de marcadores
+ 0.9 01. ( OK ) teste com outra forma de repeticao
+ 1.0 01. ( OK ) teste com outra forma de repeticao
+ 01. ( OK ) teste com outra forma de alternativa
 */
