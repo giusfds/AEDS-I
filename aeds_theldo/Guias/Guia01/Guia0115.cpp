@@ -1,13 +1,13 @@
 /*
- Guia0114 - v0.0. - 03 / 08 / 2023
+ Guia0115 - v0.0. - 03 / 08 / 2023
  Author: Giuseppe Sena Cordeiro - 801779
  Para compilar em uma janela de comandos (terminal):
  
- No Linux : g++ -o Guia0111 ./Guia0111.cpp
- No Windows: g++ -o Guia0111 Guia0111.cpp
+ No Linux : g++ -o Guia0111 ./Guia0115.cpp
+ No Windows: g++ -o Guia0111 Guia0115.cpp
  Para executar em uma janela de comandos (terminal):
- No Linux : ./Guia0111
- No Windows: Guia0111
+ No Linux : ./Guia0115
+ No Windows: Guia0115
 */
 // lista de dependencias
 #include "karel.hpp" // comentário: necessario estar na mesma pasta
