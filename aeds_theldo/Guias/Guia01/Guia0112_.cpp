@@ -19,23 +19,11 @@
 void decorateWorld ( const char* fileName )
 {
 // colocar paredes no mundo
-world->set ( 3, 2, HWALL ); // horizontal
-world->set ( 4, 2, HWALL ); // horizontal
-world->set ( 5, 2, HWALL ); // horizontal
-world->set ( 5, 3, VWALL ); // vertical
-world->set ( 5, 4, VWALL ); // vertical
-world->set ( 5, 5, VWALL ); // vertical
-world->set ( 3, 6, HWALL ); // horizontal
-world->set ( 4, 6, HWALL ); // horizontal
-world->set ( 5, 6, HWALL ); // horizontal
-world->set ( 2, 3, VWALL ); // vertical
-world->set ( 2, 4, VWALL ); // vertical
-world->set ( 2, 5, VWALL ); // vertical
-world->set ( 2, 6, VWALL ); // vertical
+
 // colocar um marcador no mundo
-world->set ( 2, 6, BEEPER );
-world->set ( 5, 7, BEEPER );
+world->set ( 6, 6, BEEPER );
 world->set ( 6, 3, BEEPER );
+world->set ( 3, 3, BEEPER );
 // salvar a configuracao atual do mundo
  world->save( fileName );
 } // decorateWorld ( )
@@ -70,64 +58,39 @@ class MyRobot : public Robot
  void doTask ( )
  {
  // executar
- move( ); // andar
- turnLeft( ); // virar 'a esquerda
- move( );
- move( );
- move( );
- move( );
- move( );
- pickBeeper( );
- move( );
- turnRight( );
- move( );
- move( );
- move( );
- pickBeeper( );
- move( );
- turnRight( );
- move( );
- move( );
- move( );
- move( );
- pickBeeper( );
- turnLeft( );
- turnLeft( ); //cima
- move( );
- move( );
- move( );
- turnLeft( );
- move( );
- turnLeft( );
- move( );
- move( );
- move( );
- turnRight( );
- move( );
- putBeeper( );
- putBeeper( );
- putBeeper( );
- turnRight( ); //voltar
- move( );
- move( );
- move( );
- turnRight( );
- move( );
- move( );
- turnRight( );
- move( );
- move( );
- move( );
- move( );
- move( );
- turnRight( );
- move( );
- move( );
- move( );
- move( );
- move( );
- turnLeft( );
- turnLeft( );
+
+ turnLeft();
+ move();
+ move();
+ move();
+ move();
+ move(); //6,1
+ turnRight();
+ move();
+ move();
+ move();
+ move();
+ move();
+ pickBeeper();// pega o 6,6 ->
+ turnRight();
+ move();
+ move();
+ move();
+ pickBeeper();// pega o 6,3 (v)
+ turnRight();
+ move();
+ move();
+ move();
+ pickBeeper();// pega o 3,3 (<-)
+ move();
+ move();
+ turnLeft();// (v)
+ move();
+ move();
+ turnLeft(); //(->)
+
+ // passar primeiro no 6,6 6,3 3,3
+
  // encerrar
  turnOff ( ); // desligar-se
  } // end doTask ( )
@@ -145,11 +108,11 @@ int main ( )
 // antes de qualquer outra coisa
 // (depois de criado, podera' ser comentado)
  world->create ( "" ); // criar o mundo
- decorateWorld ( "Guia0114.txt" );
+ decorateWorld ( "Guia0112_.txt" );
  world->show ( );
 // preparar o ambiente para uso
  world->reset ( ); // limpar configuracoes
- world->read ( "Guia0114.txt" );// ler configuracao atual para o ambiente
+ world->read ( "Guia0112_.txt" );// ler configuracao atual para o ambiente
  world->show ( ); // mostrar a configuracao atual
  set_Speed ( 3 ); // definir velocidade padrao
 // criar robo
