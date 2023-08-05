@@ -130,8 +130,8 @@ int main ( )
     robot->move( );
     robot->move( );
     robot->move( );
-   robot->turnRight( );
-   robot->turnRight( );
+    robot->turnRight( );
+    robot->turnRight( );
 
     
    
