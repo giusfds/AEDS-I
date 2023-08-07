@@ -49,6 +49,9 @@
         "numbers": "cpp",
         "sstream": "cpp",
         "stdexcept": "cpp",
-        "typeinfo": "cpp"
+        "typeinfo": "cpp",
+        "EXEMPLO0103.C": "cpp",
+        "EXEMPLO0104.C": "cpp",
+        "stdlib.h": "c"
     }
 }
