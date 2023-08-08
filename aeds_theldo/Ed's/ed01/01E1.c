@@ -1,0 +1,24 @@
+#include "io.h"
+#define PI 3.14159265358979323846
+
+double calcular_h(double area) {
+    double h = sqrt(PI/area) ;
+    return h;
+}
+
+int main() {
+
+    double area;
+    printf("insira o area que vc quer colocar\n");
+    scanf("%lf", &area);
+    //PI R^2
+    double r, area3;
+    area3 = area/3;
+    r = calcular_h(area3);
+    
+    printf("o valor de 1/3 da area e %.2ls\n", r);
+    
+
+    puts("\n--------- | FIM DO PROGRAMA | ---------\n");
+    return 0;
+}
