@@ -127,7 +127,7 @@ void IO_flush ( )
 {
 //  fflush ( stdin );   // para Windows - OBS: NAO RECOMENDADO !
                         // para Linux   - OBS: NAO FUNCIONA    !
-    int  x = 0;         // compatível com o retorno de getchar()
+    int  x = 0;         // compatï¿½vel com o retorno de getchar()
     do { x = getchar( ); } while ( x != EOF && x != '\n' );
     clearerr ( stdin ); // reiniciar o estado de EOF
 } // end IO_flush ( )
@@ -149,7 +149,7 @@ chars IO_version ( )
 void IO_id ( const char * const text )
 {
     IO_printf ( "%s\n", text );
-    IO_printf ( "%s\n", "Autor: ________________________" );
+    IO_printf ( "%s\n", "Autor: Giuseppe Sena Cordeiro - 801779" );
     IO_printf ( "\n" );          // mudar de linha
 } // fim IO_id ( )
 

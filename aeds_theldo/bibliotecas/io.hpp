@@ -154,7 +154,7 @@ std::string IO_version ( void )
 void IO_id ( std::string text )
 {
     std::cout << text << std::endl;
-    std::cout << "Autor: ________________________";
+    std::cout << "Autor: Giuseppe Sena Cordeiro - 801779";
     std::cout << std::endl;          // mudar de linha
 } // fim IO_id ( )
 

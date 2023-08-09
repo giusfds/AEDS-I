@@ -149,7 +149,7 @@ chars IO_version ( )
 void IO_id ( const char * const text )
 {
     IO_printf ( "%s\n", text );
-    IO_printf ( "%s\n", "Autor: ________________________" );
+    IO_printf ( "%s\n", "Autor: Giuseppe Sena Cordeiro - 801779" );
     IO_printf ( "\n" );          // mudar de linha
 } // fim IO_id ( )
 
