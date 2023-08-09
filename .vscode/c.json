@@ -53,5 +53,10 @@
         "prefix": "ret",
         "body": "return ${1};${0}",
         "description": "Return Teamplate"
+    },
+    "getchar template":{
+        "prefix": "ge",
+        "body": "getchar();",
+        "description": "para limpar a memoria de entrada"
     }
 }
