@@ -16,8 +16,8 @@ void funcao(){
 
     printf("o valor da conversao foi realizado dia 08/08\n");
 
-    printf("o valor R$%.2lf em euro e €%.2lf\n", valor, euro);
-    printf("o valor R$%.2lf em dolar e €%.2lf\n", valor, dolar);
+    printf("o valor R$%.2lf em euro e $%.2lf\n", valor, euro);
+    printf("o valor R$%.2lf em dolar e $%.2lf\n", valor, dolar);
 
 }
 
@@ -37,26 +37,25 @@ int main() {
     if (menu == 1){
         //dolar
         printf("valor do cambio 4,90 no dia 08/08\n");
-        printf("qual e a quantia que vc desejs converter em reais para dolar\n");
+        printf("qual e a quantia de dolar que vc quer ter\n");
         scanf("%lf", &real);
         getchar();
         dolar = real * 4.90;
 
-        printf("o valor da convercao SEM IOF e de %.2lf\n", dolar);
+        printf("o valor a pagar sera de %.2lf SEM OIF\n", dolar);
     }else if (menu == 2){
         //euro
         printf("valor do cambio 5,57 no dia 08/08\n");
-        printf("qual e a quantia que vc desejs converter em reais para euro\n");
+        printf("qual e a quantia de euro que vc quer ter\n");
         scanf("%lf", &real);
         getchar();
         euro = real * 5.57;
 
-        printf("o valor da convercao SEM IOF e de %.2lf\n", euro);
+        printf("o valor a pagar sera de %.2lf SEM OIF\n", euro);
 
     }else{
         printf("nao reconheco essa moeda\n");
     }
-    
     
 
 
