@@ -299,12 +299,25 @@ double method012(double volume) {
 }
 void method12(){
 
-    double volumeEsfera;
-    printf("qual e o volume da esfera que vc quer colocar\n");
-    scanf("%lf", &volumeEsfera);
-    double raio;
-    raio = method012(volumeEsfera);
-    printf("%.2lf\n", raio);
+    printf( "\nExercicio 01E2:\n\n" );
+
+    double volume = 0.0, volumeNovo = 0.0, raio = 0.0, area = 0.0;
+
+    printf( "Insira o valor do volume de uma esfera: " );
+    scanf( "%lf" , &volume );
+    getchar();
+    printf( "\n" );
+
+    volumeNovo = ( 3 * volume ) / 4;
+
+    raio = cbrt( (volumeNovo * 3 * PI) / 4 );
+
+    area = 4 * PI * pow( raio, 2 );
+
+    printf( "O raio de 3/4 do volume da esfera e: %.2lf\n" , raio ); 
+
+    printf( "A area da superficie da esfera e: %.2lf\n" , area ); 
+
     IO_pause ( "Apertar ENTER para terminar" );
 
     
