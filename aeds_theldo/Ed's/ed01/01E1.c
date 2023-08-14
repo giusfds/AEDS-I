@@ -1,7 +1,7 @@
 #include "io.h"
 #define PI 3.14159265358979323846
 
-double calcular_h(double area) {
+double method011(double area) {
     double h = sqrt(PI/area) ;
     return h;
 }
@@ -14,7 +14,7 @@ int main() {
     //PI R^2
     double r, area3;
     area3 = area/3;
-    r = calcular_h(area3);
+    r = method011(area3);
     
     printf("o valor de 1/3 da area e %.2ls\n", r);
     

@@ -12,3 +12,5 @@
 01E2 07/08
 
 sem duvidas dentre os exercicios
+
+ed01.c tem todas as questoes em um lugar so
