@@ -11,11 +11,11 @@ o uso da biblioteca ainda esta meio confusa, mas estou comecando a entender
 0215.c 10/08
 
 0216.c 10/08 - apresentei dificuldades ao fazer, tirar duvidas sobre as condicoes do if
-
-14/08 
-Theldo, vc falou hj na aula de colocar qualquer numero com .0 no final para ter a divisao por real
-so que qnd eu fiz, eu me esqueci desse detalhe, tem como relevar?
+14/08 - duvidas tiradas na sala, sobre and e or
 
 Inicio do uso da biblioteca "Giuseppe.h"
 
 0217.c 14/08
+0218.c 14/08
+0219.c 14/08
+0220.c 14/08
