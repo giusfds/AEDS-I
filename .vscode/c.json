@@ -12,7 +12,24 @@
             "    return 0;",
             "}"
         ],
-        "description": "Custom C Template"
+        "description": "Custom C Template, for normal libraries"
+    },
+    "theldo":{
+        "prefix": "thel",
+        "body": [
+            "#include \"io.h\"",
+            "",
+            "\/\/Giuseppe Sena Cordeiro - 801779",
+            "",
+            "int main(){",
+            "",
+            "    ${0}",
+            "",
+            "    IO_pause ( \"Apertar ENTER para terminar\" );",
+            "    return 0;",
+            "}"
+        ],
+        "description": "template for theldo"
     },
     "Custom C Template for Linux": {
         "prefix": "ioh",
@@ -21,23 +38,15 @@
             "",
             "int main() {",
             "",
+            "    IO_id(\"exemplo ${1} - Programa - v0.0\");",
+            "",
             "    ${0}",
             "",
-            "    puts(\"\\n--------- | FIM DO PROGRAMA | ---------\\n\");",
+            "    IO_pause ( \"Apertar ENTER para terminar\" );",
             "    return 0;",
             "}"
         ],
-        "description": "Custom C Template for Linux"
-    },
-    "Printf1 Template": {
-        "prefix": "print",
-        "body": "printf(\"${1}\\n\"${2});${0}",
-        "description": "Printf Template"
-    },
-    "Printf2 Template": {
-        "prefix": "prin",
-        "body": "printf(\"${1}\\n\"${2});${0}",
-        "description": "Printf Template"
+        "description": "Custom C Template, to use the Theldo's library"
     },
     "Printf4 Template": {
         "prefix": "pri",
@@ -57,6 +66,26 @@
     "getchar template":{
         "prefix": "ge",
         "body": "getchar();",
-        "description": "para limpar a memoria de entrada"
+        "description": "to clean memory"
+    },
+    "io_id":{
+        "prefix": "id",
+        "body": "IO_id(\"exemplo 0213 - Programa - v0.0\");",
+        "description": "ID"
+    },
+    "io_println":{
+        "prefix": "priln",
+        "body": "IO_println(\"${1}\");${0}",
+        "description": "println AKA java"
+    },
+    "io_pause":{
+        "prefix": "end",
+        "body": "IO_pause ( \"Apertar ENTER para terminar\" );",
+        "description": "end of commanding"
+    },
+    "io_read":{
+        "prefix": "read",
+        "body": "IO_read${1}(\"${2}\");${0}",
+        "description": "to read something"
     }
 }

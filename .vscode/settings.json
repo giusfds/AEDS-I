@@ -53,6 +53,20 @@
         "EXEMPLO0103.C": "cpp",
         "EXEMPLO0104.C": "cpp",
         "stdlib.h": "c",
-        "io.h": "c"
+        "io.h": "c",
+        "any": "cpp",
+        "forward_list": "cpp",
+        "unordered_set": "cpp",
+        "expected": "cpp",
+        "future": "cpp",
+        "shared_mutex": "cpp",
+        "spanstream": "cpp",
+        "stacktrace": "cpp",
+        "stop_token": "cpp",
+        "syncstream": "cpp",
+        "thread": "cpp",
+        "regex": "cpp",
+        "valarray": "cpp",
+        "variant": "cpp"
     }
 }
