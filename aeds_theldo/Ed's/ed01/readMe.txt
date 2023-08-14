@@ -1,3 +1,5 @@
+Readme, baseado em Numero da atividade, seguido do dia em que foi feita
+
 0111 07/08
 0112 07/08
 0113 07/08
@@ -14,3 +16,7 @@
 sem duvidas dentre os exercicios
 
 ed01.c tem todas as questoes em um lugar so
+
+14/08 
+theldo, vc falou hj na aula de colocar qualquer numero com .0 no final para ter a divisao por real
+so que qnd eu fiz, eu me esqueci desse detalhe, tem como relevar?
