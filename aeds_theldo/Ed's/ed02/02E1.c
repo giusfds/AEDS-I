@@ -4,13 +4,13 @@
 int main() {
 
     clear();
-    id("exemplo 0220 - Programa - v0.0");
+    id("exemplo 02E1 - Programa - v0.0");
 
-    double x=0,y=0,z=0;
+    char x=0,y=0,z=0;
 
-    x =readdouble("qual e o valor de x ");;
-    y =readdouble("qual e o valor de y ");;
-    z =readdouble("qual e o valor de z ");;
+    x =readchar("qual e a letra de x ");;
+    y =readchar("qual e a letra de y ");;
+    z =readchar("qual e a letra de z ");;
 
     if (x==y or x==z or z==y )
     {
@@ -21,22 +21,22 @@ int main() {
         {
             if ((x < z) and (z < y))
             {
-                print ("%lf ta entre %lf e %lf", z, x, y);
+                print ("%c ta entre %c e %c", z, x, y);
             }
             else
             {
-                print ("%lf nao ta entre %lf e %lf", z, x, y);
+                print ("%c nao ta entre %c e %c", z, x, y);
             }
         }
         else if (y < x)
         {
             if ((y < z) and (z < x ))
             {
-                print ("%lf ta entre %lf e %lf", z, y, x);
+                print ("%c ta entre %c e %c", z, y, x);
             }
             else
             {
-                print ("%lf nao ta entre %lf e %lf", z, y, x);
+                print ("%c nao ta entre %c e %c", z, y, x);
             }
         }
     }
