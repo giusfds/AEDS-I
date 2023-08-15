@@ -1,11 +1,8 @@
-// Todos os direitos da biblioteca reservados para Giuseppe Sena Coridero
-// aluno da PUC Minas
 // All library rights reserved for Giuseppe Sena Coridero,
 // PUC Minas student.
 
 //libraries
 #include <stdio.h>     // para entradas e saidas
-#include <stddef.h>    // para definicoes basicas
 #include <stdlib.h>    // para a biblioteca padrao
 #include <string.h>    // para cadeias de caracteres
 #include <stdarg.h>    // para tratar argumentos
@@ -13,24 +10,21 @@
 #include <ctype.h>     // para tipos padroes
 #include <math.h>      // para definicoes matematicas
 #include <time.h>      // para medir tempo
-#include <wchar.h>     // para 16-bit characters
-#include <iso646.h>    // para and, or, xor, not alternatives
-#include <locale.h>    // para aceitar teclados padroes PT-BR
 
 // global variables
 bool trace   = true;             // inicialmente habilitado
 #define PI 3.14159265358979323846
 
 // resets
-#define  print         printf    // melhor: print
-#define  scan          scanf     // melhor: scanf
+#define  print printf    //A bit easier to write
+#define  scan  scanf     //A bit easier to write
 
-//define end or e
+//define end, or and not
 #define AND &&
 #define OR ||
 #define NOT !
 
-//some colors to terminals
+// some colors to terminals
 #define RED "\x1b[31m"
 #define GREEN "\x1b[32m"
 #define YELLOW "\x1b[33m"
@@ -41,11 +35,11 @@ bool trace   = true;             // inicialmente habilitado
 #define BOLD "\033[1m"
 
 
-//Function to check if the number is bigger than 0
+// Function to check if the number is bigger than 0
 double checkNumber(){
     double x=0;
     print("\nInsira um numero: ");
-    scanf("%d",x);
+    scan("%d",x);
     getchar();
     if (x<=0)
     {
@@ -55,6 +49,24 @@ double checkNumber(){
     }
 
 } //end
+
+//Function even odd
+bool isEven (int x){return (x%2==0);}
+bool isOdd (int x){return (x%2 != 0);}
+// end
+
+//charactere up or lower case
+bool isUpperCase (char c){return ('A'<=c && c<='Z');}
+bool isLowerCase (char c){return ('a'<=c && c<='z');}
+// end
+
+//Function to clean stdin
+void flush ( )
+{
+    int  x = 0;
+    do { x = getchar( ); } while ( x != EOF && x != '\n' );
+    clearerr ( stdin );
+} //end 
 
 //Function to check if a number is prime
 bool isPrime (int x){
@@ -72,12 +84,12 @@ bool isPrime (int x){
 
 //Function to bubble sort the numbers in arrays
 void bubbleSort (int vetor[], int n) {
-    int k, j, aux;
+    int aux;
 
-    for (k = 1; k < n; k++) {
-        print("\n[%d] ", k);
+    for (int i = 1; i < n; i++) {
+        print("\n[%d] ", i);
 
-        for (j = 0; j < n - 1; j++) {
+        for (int j = 0; j < n - 1; j++) {
             print("%d, ", j);
 
             if (vetor[j] > vetor[j + 1]) {
@@ -126,15 +138,20 @@ void pause ( const char * const text )
 //Function only to identify
 void id ( const char * const text )
 {
-    printf ( "%s\n", text );
-    printf ( "%s\n", "Autor: Giuseppe Sena Cordeiro - 801779" );
-    printf ( "\n" );          
+    print ( "%s\n", text );
+    print ( "%s\n", "Autor: Giuseppe Sena Cordeiro - 801779" );
+    print ( "\n" );          
 } //end
 
 // Function to clear terminal
 void clear() {
-	system("cls");
+	system("cls");  //only for windows
 } // end
+
+// // Function to clear terminal
+// void clear() {
+// 	system("clear");  //only for linux
+// } // end
 
 //toUper and toLower
 void toUpper(char* string) {
@@ -147,4 +164,51 @@ void toUpper(char* string) {
 char toLower(char c) {
 	if (c >= 'A' AND c <= 'Z') return c += 32;
 	return c;
+} //end
+
+//Function to read numbers 
+int readint (const char * const text)
+{
+    int x = 0;
+    if(trace)
+       print("%s", text);
+    scan("%d", &x);
+    flush();
+    return(x);
+}
+double readdouble (const char * const text)
+{
+    double x = 0.0;
+    if(trace)
+       print("%s", text);
+    scan("%lf", &x);
+    flush();
+    return(x);
+}
+float readfloat (const char * const text)
+{
+    float x = 0.0;
+    if (trace)
+       print ("%s", text);
+    scan  ("%f", &x);
+    flush  ();
+    return    (x);
+} 
+bool readbool (const char * const text)
+{
+    int x = 0;
+    if (trace)
+       print ("%s", text);
+    scan  ("%d", &x );
+    flush  ();
+    return    (x!=0);
+}
+char readchar (const char * const text)
+{
+    char x = '0';
+    if (trace)
+       print ( "%s", text);
+    do {x = getchar();} while ('\n' == x); 
+    flush  ();
+    return (x);
 } //end
