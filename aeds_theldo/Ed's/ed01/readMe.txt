@@ -15,7 +15,7 @@ Readme, baseado em Numero da atividade, seguido do dia em que foi feita
 
 sem duvidas dentre os exercicios
 
-ed01.c tem todas as questoes em um lugar so
+ed01.c onde pode encontrar todas as questoes em um arquivo, os outros fazem parte da extrutura do ED
 
 14/08 
 theldo, vc falou hj na aula de colocar qualquer numero com .0 no final para ter a divisao por real

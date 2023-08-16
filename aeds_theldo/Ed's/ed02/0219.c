@@ -27,8 +27,6 @@ int main() {
         
         
     }
-    
-    
 
     pause ( "Apertar ENTER para terminar" );
     clear();

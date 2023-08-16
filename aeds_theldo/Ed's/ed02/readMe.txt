@@ -11,7 +11,7 @@ o uso da biblioteca ainda esta meio confusa, mas estou comecando a entender
 0215.c 10/08
 
 0216.c 10/08 - apresentei dificuldades ao fazer, tirar duvidas sobre as condicoes do if
-14/08 - duvidas tiradas na sala, sobre and e or
+14/08 - duvidas tiradas na sala, sobre and, or e not
 
 Inicio do uso da biblioteca "Giuseppe.h"
 
@@ -19,3 +19,9 @@ Inicio do uso da biblioteca "Giuseppe.h"
 0218.c 14/08
 0219.c 14/08
 0220.c 14/08
+
+
+02E1.c 16/08
+02E2.c 16/08
+
+ed02.c onde pode encontrar todas as questoes em um arquivo, os outros fazem parte da extrutura do ED

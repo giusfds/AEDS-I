@@ -22,9 +22,6 @@ int main() {
         IO_println("o numero nao faz parte do intervalo [15:30] e (25:50)");
     }
     
-    
-    
-    
 
     IO_pause ( "Apertar ENTER para terminar" );
     return 0;

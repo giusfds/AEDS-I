@@ -8,9 +8,9 @@ int main() {
 
     double x=0,y=0,z=0;
 
-    x =readdouble("qual e o valor de x ");;
-    y =readdouble("qual e o valor de y ");;
-    z =readdouble("qual e o valor de z ");;
+    x =readdouble("qual e o valor de x ");
+    y =readdouble("qual e o valor de y ");
+    z =readdouble("qual e o valor de z ");
 
     if (x==y or x==z or z==y )
     {
