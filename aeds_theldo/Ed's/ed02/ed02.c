@@ -18,7 +18,8 @@
 
 //method's
 void method01(){
-
+    
+    clear();
     // definir dado
     int numero=0; // definir variavel com valor inicial 
     printf("qual e o numero que vc quer verificar se e par ou impar\n");
@@ -35,10 +36,11 @@ void method01(){
         printf("o numero e impar\n");
     }
     
-    puts("\n--------- | FIM DO PROGRAMA | ---------\n");
+
 }
 void method02(){
 
+    clear();
     // definir dado
     int x = 0; // definir variavel com valor inicial
 
@@ -66,11 +68,9 @@ void method02(){
         IO_println ("Numero impar e maior que trinta");
     } 
 
-    // encerrar
-    IO_pause ( "Apertar ENTER para terminar" );
-    return ( 0 );
 }
 void method03(){
+    clear();
     IO_id("exemplo 0213 - Programa - v0.0");
 
     int numero;
@@ -84,10 +84,10 @@ void method03(){
     {
         IO_println("o valor nao se encontra dentro do espaco de 25:65");
     }
-    
-    IO_pause ( "Apertar ENTER para terminar" );
+
 }
 void method04(){
+    clear();
     IO_id("exemplo 0213 - Programa - v0.0");
 
     int x;
@@ -102,9 +102,9 @@ void method04(){
         IO_println("o valor nao pertence ao intervalo de [20:06]");
     }
 
-    IO_pause ( "Apertar ENTER para terminar" );
 }
 void method05(){
+    clear();
     IO_id("exemplo 0213 - Programa - v0.0");
 
     int x;
@@ -124,11 +124,10 @@ void method05(){
     {
         IO_println("o numero nao faz parte do intervalo [15:30] e (25:50)");
     }
-    
 
-    IO_pause ( "Apertar ENTER para terminar" );
 }
 void method06(){
+    clear();
     IO_id("exemplo 0213 - Programa - v0.0");
 
     int x, y; 
@@ -146,11 +145,9 @@ void method06(){
     }else{
         IO_println ("(x) e (y) sao pares");
     }
-
-    IO_pause ( "Apertar ENTER para terminar" );
-    return 0;
 }
 void method07(){
+    clear();
     id("exemplo 0217 - Programa - v0.0");
 
     int x,y;
@@ -200,10 +197,7 @@ void method07(){
             print (" e negativo");
         }
     }
-    
-    
 
-    pause ( "Apertar ENTER para terminar" );
 }
 void method08(){
     clear();
@@ -229,8 +223,6 @@ void method08(){
         print("o valor de (x) e maior do que o dobro de (y)\n");
     }
 
-    pause ( "Apertar ENTER para terminar" );
-    clear();
 }
 void method09(){
     clear();
@@ -255,11 +247,7 @@ void method09(){
             print("o valor de (Y) nao esta presente entre (X) e (Z)\n");
         }
         
-        
     }
-
-    pause ( "Apertar ENTER para terminar" );
-    clear();
 }
 void method10(){
     clear();
@@ -299,9 +287,7 @@ void method10(){
             }
         }
     }
-    
-    pause ( "Apertar ENTER para terminar" );
-    clear();
+
 }
 void methodE1(){
     clear();
@@ -341,9 +327,7 @@ void methodE1(){
             }
         }
     }
-    
-    pause ( "Apertar ENTER para terminar" );
-    clear();
+
 }
 void methodE2(){
     clear();
@@ -384,8 +368,6 @@ void methodE2(){
         }
     }
 
-    pause ( "Apertar ENTER para terminar" );
-    clear();
 }
 
 
