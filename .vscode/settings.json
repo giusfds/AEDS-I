@@ -67,6 +67,7 @@
         "thread": "cpp",
         "regex": "cpp",
         "valarray": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "giuseppe.h": "c"
     }
 }

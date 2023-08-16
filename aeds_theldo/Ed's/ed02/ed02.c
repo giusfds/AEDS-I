@@ -347,7 +347,7 @@ void methodE1(){
 }
 void methodE2(){
     clear();
-    id("exemplo 0220 - Programa - v0.0");
+    id("exemplo 02E2 - Programa - v0.0");
 
     char x,y,z;
 

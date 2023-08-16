@@ -4,7 +4,7 @@
 int main() {
 
     clear();
-    id("exemplo 0220 - Programa - v0.0");
+    id("exemplo 02E2 - Programa - v0.0");
 
     char x,y,z;
 
