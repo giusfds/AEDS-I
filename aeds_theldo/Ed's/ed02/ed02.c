@@ -68,6 +68,7 @@ void method02(){
         IO_println ("Numero impar e maior que trinta");
     } 
 
+
 }
 void method03(){
     clear();
