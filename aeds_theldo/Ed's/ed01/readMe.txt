@@ -15,8 +15,10 @@ Readme, baseado em Numero da atividade, seguido do dia em que foi feita
 
 sem duvidas dentre os exercicios
 
-ed01.c onde pode encontrar todas as questoes em um arquivo, os outros fazem parte da extrutura do ED
+ed01.c onde pode encontrar todas as questoes em um arquivo, os outros fazem
+parte da extrutura do ED
 
 14/08 
-theldo, vc falou hj na aula de colocar qualquer numero com .0 no final para ter a divisao por real
-so que qnd eu fiz, eu me esqueci desse detalhe, tem como relevar?
+theldo, vc falou hj na aula de colocar qualquer numero com .0 no final para
+ter a divisao por realso que qnd eu fiz, eu me esqueci desse detalhe,
+tem como relevar?

@@ -68,6 +68,8 @@
         "regex": "cpp",
         "valarray": "cpp",
         "variant": "cpp",
-        "giuseppe.h": "c"
+        "giuseppe.h": "c",
+        "iso646.h": "c",
+        "wchar.h": "c"
     }
 }
