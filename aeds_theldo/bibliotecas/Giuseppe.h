@@ -16,8 +16,12 @@ bool trace   = true;             // inicialmente habilitado
 #define PI 3.14159265358979323846
 
 // resets
-#define  print printf    //A bit easier to write
-#define  scan  scanf     //A bit easier to write
+#define  print         printf    //A bit easier to write
+#define  scan          scanf     //A bit easier to write
+
+//defines for strings
+#define  readStr       "[^\r\n]" //Read more than a space
+#define  strAverage    80        //Average of line in cmd
 
 //define end, or and not
 #define AND &&
@@ -55,9 +59,12 @@ bool isEven (int x){return (x%2==0);}
 bool isOdd (int x){return (x%2 != 0);}
 // end
 
-//charactere up or lower case
+//charactere cases
 bool isUpperCase (char c){return ('A'<=c && c<='Z');}
 bool isLowerCase (char c){return ('a'<=c && c<='z');}
+bool isLetter    (char c){return ('A'<=c && c<='Z') OR ('a'<=c && c<='z');}
+bool isAlphaNum  (char c){return ('A'<=c && c<='Z') OR 
+                                 ('a'<=c && c<='z') OR ('0'<=c && c<='9');}
 // end
 
 //Function to clean stdin
