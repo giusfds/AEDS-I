@@ -121,7 +121,7 @@ void SelectionSort(int* array, int arrayLength) {
 	}
 }// end
 
-//Function to print the arrays
+//Function to print the arrays of int
 void printArray(int arr[], int size)
 {
     int i;
