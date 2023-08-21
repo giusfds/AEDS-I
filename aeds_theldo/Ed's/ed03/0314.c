@@ -1,80 +1,34 @@
 #include "io.h"
 #include "Giuseppe.h"
 
-bool ToUpper(char* palavra){
-    for (int i = 0; i < (int)strlen(palavra); i++)
-    {
-        if (isUpperCase(palavra[i]))
-        {
-            return true;
-        }
-    }
-    return false;
-}
-bool ToAlpha(char* palavra){
-    for (int i = 0; i < (int)strlen(palavra); i++)
-    {
-        if (isAlphaNum(palavra[i]))
-        {
-            return true;
-        }
-    }
-    return false;
-}
-bool ToLower(char* palavra){
-    for (int i = 0; i < (int)strlen(palavra); i++)
-    {
-        if (isLowerCase(palavra[i]))
-        {
-            return true;
-        }
-    }
-    return false;
-    
-}
-
 int main() {
 
     clear();
     id("exemplo 0314 - Programa - v0.0");
 
-    char *palavra, notAlpha[strMaxLength], toLower[strMaxLength], 
-    toUpper[strMaxLength];
+    char *palavra;
+    int count = 0, tamanho = 0;
 
-    int contadorNAlpha=0, contadorLower=0, contadorUpper=0;
+    print( "Digite uma palavra: " );
+    palavra = IO_readstring ("qual e a string que vc quer ");
 
-    palavra = IO_readstring("qual e a palavra que vc quer ler: ");
-
-    for (int i = 0; i < (int)strlen(palavra); i++)
-    {
-        if (ToAlpha(palavra)/*alpha*/)
-        {
-            notAlpha[contadorNAlpha] = palavra[i];
-
-            contadorNAlpha++;
-
-        }else if (ToUpper(palavra)/*upper*/)
-        {
-            toUpper[contadorNAlpha] = palavra[i];
-
-            contadorUpper++;
-
-        }else if (Tolower(palavra)/*lower*/)
-        {
-            toLower[contadorLower] = palavra[i];
-
-            contadorLower++;
-
-        }  
+    tamanho = strlen(palavra);
+    
+    for(int i = 0; i < tamanho; i=i+1 ){
+        if( isalpha(palavra[i] ) ) {
+            if( islower(palavra[i]) )
+            {
+                print( "O caracter (%c) e minusculo\n" , palavra[i] );
+            }else{
+                print( "O caracter (%c) e MAIUSCULO\n" , palavra[i] );
+            }
+            count++;
+        }else{
+            print( "O caracter (%c) e um simbolo\n" , palavra[i] );
+        }      
     }
 
-    print("a palavra inicial e: %s\n", palavra);
-
-    print("os caracteres especiais  sao: %s\n", notAlpha);
-    
-    print("os caracteres maiusculos sao: %s\n", toUpper);
-    
-    print("os caracteres minusculos sao: %s\n", toLower);
+    print( "\nEm \"%s\" %d caracteres sao letras\n", palavra, count );
 
     pause ( "Apertar ENTER para terminar" );
     clear();

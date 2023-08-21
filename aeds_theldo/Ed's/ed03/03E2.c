@@ -14,7 +14,7 @@ bool letter(char* palavra){
 
 int main() {
 
-    // clear();
+    clear();
     id("exemplo 03E2 - Programa - v0.0");
 
     char  *palavra;

@@ -9,7 +9,7 @@ int main() {
     char palavra[80];
     int contador;
 
-    for (int i = (int)strlen(palavra); i >= 0 ; i++)
+    for (int i = (int)strlen(palavra); i >= 0 ; i--)
     {
         if ((palavra[i] >= 'A') AND (palavra[i] <= 'Z'))
         {
