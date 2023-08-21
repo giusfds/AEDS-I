@@ -5,7 +5,6 @@ double method012(double volume) {
     double h = pow((4/3*PI/volume), 1/3);
     return h;
 }
-
 int main() {
 
     double volumeEsfera;
