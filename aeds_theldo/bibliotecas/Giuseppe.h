@@ -21,7 +21,13 @@ bool trace   = true;             // inicialmente habilitado
 
 //defines for strings
 #define  readStr       "[^\r\n]" //Read more than a space
-#define  strAverage    80        //Average of line in cmd
+#define  strMaxLength  80        //Average of line in cmd
+
+//pointers easier to write
+typedef char*   chars  ;            // definir cadeia  de caracteres
+typedef int*    ints   ;            // definir arranjo de inteiros
+typedef double* doubles;            // definir arranjo de reais
+typedef bool*   bools  ;            // definir arranjo de logicos
 
 //define end, or and not
 #define AND &&
@@ -65,6 +71,7 @@ bool isLowerCase (char c){return ('a'<=c && c<='z');}
 bool isLetter    (char c){return ('A'<=c && c<='Z') OR ('a'<=c && c<='z');}
 bool isAlphaNum  (char c){return ('A'<=c && c<='Z') OR 
                                  ('a'<=c && c<='z') OR ('0'<=c && c<='9');}
+bool isNumber       (char c){return ('0'<= c && c <= '9');}
 // end
 
 //Function to clean stdin
@@ -121,7 +128,7 @@ void SelectionSort(int* array, int arrayLength) {
 	}
 }// end
 
-//Function to print the arrays
+//Function to print the arrays of int
 void printArray(int arr[], int size)
 {
     int i;
@@ -219,3 +226,4 @@ char readchar (const char * const text)
     flush  ();
     return (x);
 } //end
+
