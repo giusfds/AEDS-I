@@ -23,6 +23,12 @@ bool trace   = true;             // inicialmente habilitado
 #define  readStr       "[^\r\n]" //Read more than a space
 #define  strMaxLength  80        //Average of line in cmd
 
+//pointers easier to write
+typedef char*   chars  ;            // definir cadeia  de caracteres
+typedef int*    ints   ;            // definir arranjo de inteiros
+typedef double* doubles;            // definir arranjo de reais
+typedef bool*   bools  ;            // definir arranjo de logicos
+
 //define end, or and not
 #define AND &&
 #define OR ||
@@ -65,6 +71,7 @@ bool isLowerCase (char c){return ('a'<=c && c<='z');}
 bool isLetter    (char c){return ('A'<=c && c<='Z') OR ('a'<=c && c<='z');}
 bool isAlphaNum  (char c){return ('A'<=c && c<='Z') OR 
                                  ('a'<=c && c<='z') OR ('0'<=c && c<='9');}
+bool isNumber       (char c){return ('0'<= c && c <= '9');}
 // end
 
 //Function to clean stdin
