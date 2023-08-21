@@ -22,7 +22,6 @@ int main() {
     {
         print("%d | ",aux[i]);
     }
-    
 
     pause ( "Apertar ENTER para terminar" );
     clear();
