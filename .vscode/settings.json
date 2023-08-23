@@ -70,6 +70,7 @@
         "variant": "cpp",
         "giuseppe.h": "c",
         "iso646.h": "c",
-        "wchar.h": "c"
+        "wchar.h": "c",
+        "string.h": "c"
     }
 }
