@@ -227,3 +227,20 @@ char readchar (const char * const text)
     return (x);
 } //end
 
+// Function pow without math.h
+double customPow(double base, int exponent) {
+    double result = 1.0;
+    int i;
+    
+    if (exponent >= 0) {
+        for (i = 0; i < exponent; i++) {
+            result *= base;
+        }
+    } else {
+        for (i = 0; i > exponent; i--) {
+            result /= base;
+        }
+    }
+    
+    return result;
+} // end
