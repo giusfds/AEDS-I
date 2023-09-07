@@ -2,7 +2,7 @@
 
 int main() {
 
-    int x[2], y[2];
+    int x[2], y[2], distanciaX=0, distanciaY=0;
 
     for (int i = 0; i < 2; i++)
     {
@@ -15,9 +15,10 @@ int main() {
 
     }
     
+    distanciaX = x[0] - x[1];
+    distanciaY = y[0] - y[1];
 
-    // tirar x1 de x2 e saber a distancia
-    // mesma coisa com o y
+    printf("a distancia entre os dois pontos e [%d,%d]\n", distanciaX, distanciaY);
 
     printf("\n\n--------- | FIM DO PROGRAMA | ---------\n\n");
     return 0;

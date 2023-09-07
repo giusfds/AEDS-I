@@ -2,7 +2,7 @@
 
 int main() {
 
-    double numero[5], soma;
+    double numero[5], soma, media;
 
     for (int i = 0; i < 5; i++)
     {
@@ -11,9 +11,9 @@ int main() {
         soma += numero[i]; 
     }
 
-    numero[0]= soma/5;
+    media = soma/5;
 
-    printf("a media dos numeros e %.2lf\n", numero[0]); 
+    printf("a media dos numeros e %.2lf\n", media); 
 
     printf("\n\n--------- | FIM DO PROGRAMA | ---------\n\n");
     return 0;

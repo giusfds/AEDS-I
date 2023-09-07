@@ -18,6 +18,7 @@
         "prefix": "thel",
         "body": [
             "#include \"io.h\"",
+            "#include \"Giuseppe.h\"",
             "",
             "\/\/Giuseppe Sena Cordeiro - 801779",
             "",
@@ -25,7 +26,7 @@
             "",
             "    ${0}",
             "",
-            "    IO_pause ( \"Apertar ENTER para terminar\" );",
+            "    pause ( \"Apertar ENTER para terminar\" );",
             "    return 0;",
             "}"
         ],
@@ -34,15 +35,17 @@
     "Custom C Template for Linux": {
         "prefix": "ioh",
         "body": [
-            "#include \"io.h\"",
+            "#include \"Giuseppe.h\"",
             "",
             "int main() {",
             "",
-            "    IO_id(\"exemplo ${1} - Programa - v0.0\");",
+            "    clear();",
+            "    id(\"exercicio ${1} - Programa - v0.0\");",
             "",
             "    ${0}",
             "",
-            "    IO_pause ( \"Apertar ENTER para terminar\" );",
+            "    pause ( \"Apertar ENTER para terminar\" );",
+            "    clear();",
             "    return 0;",
             "}"
         ],
@@ -53,8 +56,18 @@
         "body": "printf(\"${1}\\n\"${2});${0}",
         "description": "Printf Template"
     },
+    "Print Template": {
+        "prefix": "prin",
+        "body": "printf(\"${1}\\n\"${2});${0}",
+        "description": "Printf Template"
+    },
+    "Printf42 Template": {
+        "prefix": "printf",
+        "body": "printf(\"${1}\\n\"${2});${0}",
+        "description": "Printf Template"
+    },
 	"Scanf Template":{
-		"prefix": "scan",
+		"prefix": "sca",
         "body": "scanf(\"%${1}\", &${2});${0}",
         "description": "Scanf Template"
 	},
@@ -68,24 +81,19 @@
         "body": "getchar();",
         "description": "to clean memory"
     },
-    "io_id":{
+    "id":{
         "prefix": "id",
-        "body": "IO_id(\"exemplo 0213 - Programa - v0.0\");",
+        "body": "id(\"exemplo 0213 - Programa - v0.0\");",
         "description": "ID"
     },
-    "io_println":{
-        "prefix": "priln",
-        "body": "IO_println(\"${1}\");${0}",
-        "description": "println AKA java"
-    },
-    "io_pause":{
+    "pause":{
         "prefix": "end",
-        "body": "IO_pause ( \"Apertar ENTER para terminar\" );",
+        "body": "pause ( \"Apertar ENTER para terminar\" );",
         "description": "end of commanding"
     },
-    "io_read":{
+    "read":{
         "prefix": "read",
-        "body": "IO_read${1}(\"${2}\");${0}",
+        "body": "read${1}(\"${2}\");${0}",
         "description": "to read something"
     }
 }
