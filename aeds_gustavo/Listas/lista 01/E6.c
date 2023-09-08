@@ -2,7 +2,7 @@
 
 bool cores(int vermelho, int verde, int azul){
     // funcao apenas para ver se entra ou nao no if (linha 25)
-    if (vermelho < 0 || vermelho > 255 || verde < 0 || verde > 255 || azul < 0 || azul > 255)
+    if (vermelho < 0 OR vermelho > 255 OR verde < 0 OR verde > 255 OR azul < 0 OR azul > 255)
     {
         return true;
     }else{

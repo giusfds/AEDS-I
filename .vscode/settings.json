@@ -73,6 +73,8 @@
         "wchar.h": "c",
         "string.h": "c",
         "ctype.h": "c",
-        "math.h": "c"
+        "math.h": "c",
+        "e8.C": "cpp",
+        "E44.C": "cpp"
     }
 }

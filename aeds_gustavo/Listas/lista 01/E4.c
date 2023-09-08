@@ -5,17 +5,26 @@ int main() {
     clear();
     id("exercicio 4");
 
-    char nome[strMaxLength]; 
+    int tamanho, contador=0;
+    char nome[strMaxLength];
 
-    // nao tenho o readstring :(
-    printf("Digite seu nome completo: ");
-    fgets(nome, sizeof(nome), stdin);
+    printf("digite seu nome completo: ");
+    fgets(nome, sizeof(nome), stdin); //! li o nome da pessoa
 
-    nome[strcspn(nome, "\n")] = 0;
+    tamanho = strlen(nome);
 
-    int comprimento = strlen(nome);
-
-    printf("O nome tem %d caracteres.\n", comprimento);
+    for (int i = 0; i < tamanho -1; i++)
+    {
+        if (nome[i] == ' ')
+        {
+            //! so nao fazer nada
+        }else if (isLetter)
+        {
+            contador++;
+        }
+    }
+    
+    printf("%d\n", contador);
 
     pause ( "Apertar ENTER para terminar" );
     clear();
