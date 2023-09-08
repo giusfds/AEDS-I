@@ -67,6 +67,13 @@ bool isEven (int x){return (x%2==0);}
 bool isOdd (int x){return (x%2 != 0);}
 // end
 
+//Function comparison
+int largest2 (int x, int y) {if (x<y) x=y; return x;}
+int largest3 (int x, int y, int z) {if (x<y) x=y; if(x<z) x=z; return x;}
+double largest2db (double x, double y) {if (x<y) x=y; return x;}
+double largest3db (double x, double y, double z) {if (x<y) x=y; if(x<z) x=z; return x;}
+// end
+
 //charactere cases
 bool isUpperCase (char c){return ('A'<=c && c<='Z');}
 bool isLowerCase (char c){return ('a'<=c && c<='z');}
@@ -246,3 +253,14 @@ double customPow(double base, int exponent) {
     
     return result;
 } // end
+
+// My STRLEN
+int myStrlen(const char *palavra){
+    int contador=0, i=0;
+    while (palavra[i] != '\n')
+    {
+        contador++;
+        i++;
+    }
+    return contador;
+} //end

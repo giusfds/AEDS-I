@@ -11,9 +11,11 @@ int main() {
     printf("digite seu nome completo: ");
     fgets(nome, sizeof(nome), stdin); //! li o nome da pessoa
 
-    tamanho = strlen(nome);
+    tamanho = myStrlen(nome); 
+    //myStrlen e uma variacao do strlen normal, so que feita sem o uso da 
+    //biblioteca string.h
 
-    for (int i = 0; i < tamanho -1; i++)
+    for (int i = 0; i < tamanho; i++)
     {
         if (nome[i] == ' ')
         {
