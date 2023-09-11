@@ -40,7 +40,7 @@
             "int main() {",
             "",
             "    clear();",
-            "    id(\"exercicio ${1} - Programa - v0.0\");",
+            "    id(\"exercicio ${1}\");",
             "",
             "    ${0}",
             "",
