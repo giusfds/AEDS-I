@@ -45,6 +45,8 @@ typedef bool*   bools  ;            // definir arranjo de logicos
 #define CYAN "\x1b[36m"
 #define RESET "\x1b[0m"
 #define BOLD "\033[1m"
+void printColor(const char* msg, const char* color) {
+    printf("%s%s%s", color, msg, RESET);}
 
 
 // Function to check if the number is bigger than 0
@@ -263,4 +265,14 @@ int myStrlen(const char *palavra){
         i++;
     }
     return contador;
+} //end
+
+// invert arr
+void inverterArray(int arr[], int tamanho) {
+    int i, temp;
+    for(i = 0; i < tamanho/2; i++) {
+        temp = arr[i];
+        arr[i] = arr[tamanho-i-1];
+        arr[tamanho-i-1] = temp;
+    }
 } //end

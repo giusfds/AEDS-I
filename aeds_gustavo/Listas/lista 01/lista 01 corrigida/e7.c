@@ -8,7 +8,7 @@ int main() {
     float x1, x2, y1, y2;
 
     printf("digite as cordenadas do vetores\n");
-    scanf("%f %f %f %f", &x1, &x2 &y1 &y2);
+    scanf("%f %f %f %f", &x1, &x2, &y1, &y2);
 
     float e, a , v;
     e = x1*x2 + y1*y2;
