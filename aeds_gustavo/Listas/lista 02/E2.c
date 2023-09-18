@@ -42,7 +42,7 @@ int main() {
         printf("vc e um eleitor facultativo menor de idade\n");
     }else if (eleitor18(idade))
     {
-        /* code */
+        printf("vc e um eleitor obrigatorio\n");
     }else
     {
         printf("vc e um eleitor facultativo maior de idade\n");
