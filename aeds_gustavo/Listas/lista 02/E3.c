@@ -29,6 +29,12 @@ int main() {
 
     if (num2(numero))
     {
+        if ((num2(numero)) && (num5(numero)))
+        {
+           printf("O numero e divisivel 2, 5 e 10\n");
+           return 0;
+        }
+
         printf("O numero e divisivel por 2");
     }else if (num5(numero))
     {
