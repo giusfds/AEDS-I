@@ -258,12 +258,8 @@ double customPow(double base, int exponent) {
 
 // My STRLEN
 int myStrlen(const char *palavra){
-    int contador=0, i=0;
-    while (palavra[i] != '\n')
-    {
-        contador++;
-        i++;
-    }
+    int contador=-1;
+    while (palavra[contador++] != '\n');
     return contador;
 } //end
 

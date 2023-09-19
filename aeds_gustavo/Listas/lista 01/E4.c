@@ -20,7 +20,7 @@ int main() {
         if (nome[i] == ' ')
         {
             //! so nao fazer nada
-        }else if (isLetter)
+        }else if (isLetter(nome[i]))
         {
             contador++;
         }
