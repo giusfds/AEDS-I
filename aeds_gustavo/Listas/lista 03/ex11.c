@@ -20,7 +20,7 @@ int main() {
 
     printf("o valor aproximado de Ln(%.0lf)= %.4lf\n",x, somatorio);
 
-    // resultado 0.6931
+    // resultado ln(2) = 0.6931
 
     pause ( "Apertar ENTER para terminar" );
     clear();

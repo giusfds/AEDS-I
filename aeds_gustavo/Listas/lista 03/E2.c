@@ -15,6 +15,7 @@ int main() {
         soma+=1/(pow(2, i));
     }
     
+    printf("resultado: %.4lf\n", soma);
 
     pause ( "Apertar ENTER para terminar" );
     clear();
