@@ -1,0 +1,2 @@
+1 - o codigo em questao serve para calcular pi, 
+atravez de uma aproximacao, dada pela a conta na linha 10,
