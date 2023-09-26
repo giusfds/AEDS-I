@@ -75,6 +75,8 @@
         "ctype.h": "c",
         "math.h": "c",
         "e8.C": "cpp",
-        "E44.C": "cpp"
+        "E44.C": "cpp",
+        "bitset": "c",
+        "format": "c"
     }
 }
