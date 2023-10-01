@@ -1,18 +1,18 @@
-# alocacao de memoria dinamica
+# Alocação de Memória Dinâmica
 
 - Qualquer coisa relacionada à alocação de memória dinâmica está presente na biblioteca stdlib.h.
+
+```c
+int* arr = (int*)malloc(sizeof(int)*10);
+```
 
 - Vamos traduzir o que está acontecendo acima. Primeiro, temos que fazer o cast (conversão) para o tipo de ponteiro que queremos. Neste caso, queremos o ponteiro de um inteiro (int*), uma vez que a função malloc não tem conhecimento do tipo de variável que queremos usar. Segundo, precisamos passar para o malloc a quantidade em bytes a ser alocada. Como estamos precisando de um array de inteiros, usamos a função sizeof para encontrar o tamanho em bytes de um inteiro. Por fim, multiplicamos pelo tamanho que gostaríamos que o nosso array fosse (neste caso, 10).
 - Em resumo, estamos criando um array com espaço para dez inteiros, todos com valores não iniciados (lixo de memória).
 
 
-### resumo da biblioteca ˋ stdlib.h ˋ (principais funcoes)
+### Resumo da Biblioteca stdlib.h (Principais Funções)
 1. Função malloc:
 Veja o exemplo abaixo:
-
-```c
-int* arr = (int*)malloc(sizeof(int)*10);
-```
 
 - Serve para criar um array dinâmico, como já foi feito acima, onde cada número (int) fica contido dentro de um espaço de memória reservado para ele. Caso o array ultrapasse o valor de bytes alocados, o ponteiro retornará "null", ou seja, nada.
 - A função também é utilizada de forma que em todos os tipos de variáveis ela é aceita: float, double e char. Basta mudar a sintaxe. Entretanto, essa função inicia cada espaço do "vetor" com lixo.
