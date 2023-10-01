@@ -77,6 +77,7 @@
         "e8.C": "cpp",
         "E44.C": "cpp",
         "bitset": "c",
-        "format": "c"
+        "format": "c",
+        "stdbool.h": "c"
     }
 }

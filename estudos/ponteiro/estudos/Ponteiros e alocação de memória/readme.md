@@ -1,0 +1,2 @@
+# Ponteiros e alocação de memória
+- o estudo desses ponteiros partem atraves do [repositorio](https://github.com/Programando-o-Mundo/Microfundamentos-AEDs/blob/main/C/ponteiro/Ponteiro-e-alocação-de-memória.md)
