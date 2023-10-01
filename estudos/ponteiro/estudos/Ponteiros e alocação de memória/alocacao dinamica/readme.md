@@ -26,6 +26,7 @@ ptr = (int*) malloc(100 * sizeof(int));
 2. Função calloc
 - É bem parecida com o malloc, realiza as mesmas funções, porém a inicialização do "vetor" sempre começa com o "0" e não com lixo.
 - A sintaxe do calloc é um pouco diferente da do malloc realizada acima, já que ele precisa de mais parâmetros do que o malloc.
+- Em relação ao calloc, a função é preferencialmente usada pra alocar caractere ou string.
 
 - Sintaxe:
 ```c
