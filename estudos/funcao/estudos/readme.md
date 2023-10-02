@@ -107,5 +107,5 @@ int main(void) {
 }
 ```
 - Neste caso, podemos notar que o procedimento está alterando os valores da variável. Isso ocorre porque estamos passando o local onde a variável foi armazenada, ou seja, o procedimento altera os valores na main, sem termos que alterá-los através de uma variável temporária.
-
+- Pode-se encontrar mais exemplos de função utilizando parâmetros [aqui](https://github.com/giusfds/aeds/tree/main/estudos/funcao/exemplos)
 
