@@ -1,7 +1,7 @@
 # Recursão
 
 ### Pré-requisito
->[função](https://github.com/giusfds/aeds/tree/main/estudos/funcao/estudos)
+>[Função](https://github.com/giusfds/aeds/tree/main/estudos/funcao/estudos)
 
 ## O que é uma função recursiva?
 Uma função recursiva é simplesmente uma função que chama a si mesma até que o objeto de parada retorne o seu valor final. Pense nisso como descer uma escada, para passar de um degrau para o próximo, você executa várias tarefas, que são os comandos na função. Antes de finalizar, você deve pisar em outro degrau, ou seja, realizar as mesmas atividades até chegar no final da escada, que neste ponto de vista é o seu objeto de parada. Falarei mais sobre isso adiante.
