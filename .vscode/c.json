@@ -44,6 +44,7 @@
             "",
             "    ${0}",
             "",
+            "    getchar();",
             "    pause ( \"Apertar ENTER para terminar\" );",
             "    clear();",
             "    return 0;",
