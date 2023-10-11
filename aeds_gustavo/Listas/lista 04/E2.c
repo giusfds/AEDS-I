@@ -25,6 +25,15 @@ int main() {
         }
     }
     printf("o valor apareceu %d vezes\n", cont);
+    printf("nas posicoes\n");
+
+    for (int i = 0; i < 10; i++)
+    {
+        if (vet[i] == valor)
+        {
+            printf("%d, ", i);
+        }
+    }
 
 
     pause ( "Apertar ENTER para terminar" );
