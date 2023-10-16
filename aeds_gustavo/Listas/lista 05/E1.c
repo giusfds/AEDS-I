@@ -7,6 +7,7 @@ int isPar(int numero){
     }
     return 0; 
 }
+// pode se usar boolean para realizar tal ação. pois ambos retornam 0 ou 1 (true or false).
 
 int main() {
 
