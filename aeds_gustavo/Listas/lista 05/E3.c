@@ -5,7 +5,7 @@ double somatorio(double n){
 
     for (int i = 1; i <= n; i++)
     {
-        somatorio+= 4.0/((2.0*i)-1.0);
+        somatorio+= (pow(-1, (i-1) ) ) * 4.0 / ((2.0*i)-1.0);
     }
     return somatorio;
 }
@@ -22,7 +22,7 @@ int main() {
     scanf("%lf", &n);
 
     resultado = somatorio(n);
-    printf("o resultado aproximado de PI e %.2lf\n", resultado);
+    printf("o resultado aproximado de PI e %.4lf\n", resultado);
 
     getchar();
     pause ( "Apertar ENTER para terminar" );
