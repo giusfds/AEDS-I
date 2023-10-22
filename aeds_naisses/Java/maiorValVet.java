@@ -30,7 +30,7 @@ public class maiorValVet {
 
         System.out.println("\n\n--------------------\n");
 
-        n1 = rec(vet, 9, -2000); // Note que o último índice é 9, não 10
+        n1 = rec(vet, 9, -2000);
         System.out.println("recusividade ||  " + n1);
     }
 }
