@@ -170,6 +170,22 @@ Data MaisDias(Data data, int dia){
     return data2;
 }
 
+// estou com erro nessa funcao, e nao sei qual e o erro dela.
+// nao consigo compilar e fica dando esse erro aqui
+// https://prnt.sc/M5LAWZVLBZyQ
+// porem acho que a logica esta certa
+
+int comparacao(int *dia, int *mes, int *ano){
+    int dias = *dia;
+    int meses = *mes;
+    int anos = *ano;
+
+    dias += anos * 365;
+    dias += meses * 30;
+
+    return dias;
+}
+
 int diferenca(Data data1, Data data2)
 {
     int diaf;
@@ -219,18 +235,3 @@ int diferenca(Data data1, Data data2)
     return a;
 }
 
-// estou com erro nessa funcao, e nao sei qual e o erro dela.
-// nao consigo compilar e fica dando esse erro aqui
-// https://prnt.sc/M5LAWZVLBZyQ
-// porem acho que a logica esta certa
-
-int comparacao(int *dia, int *mes, int *ano){
-    int dias = *dia;
-    int meses = *mes;
-    int anos = *ano;
-
-    dias += anos * 365;
-    dias += meses * 30;
-
-    return dias;
-}
