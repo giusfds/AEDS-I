@@ -65,8 +65,7 @@ bool Data::valida(int dia, int mes, int ano)
         {
             return true;
         }
-        else if ((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12)
-                && (dia >= 1 && dia <= 31))
+        else if ((mes == 1 || mes == 3 || mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12) && (dia >= 1 && dia <= 31))
         {
             return true;
         }
@@ -94,28 +93,16 @@ Data::Data(int dia, int mes, int ano)
 }
 
 // 3.
-int Data::getAno()
-{
-    return ano;
-}
-
-int Data::getMes()
-{
-    return mes;
-}
-
-int Data::getDia()
-{
-    return dia;
-}
+int Data::getAno() { return ano; }
+int Data::getMes() { return mes; }
+int Data::getDia() { return dia; }
 
 // 4.
 
-
 int main()
 {
-    //1.
-    // Data hoje();
+    // 1.
+    //  Data hoje();
 
     // 2.
     // try
@@ -126,9 +113,6 @@ int main()
     // {
     //     cerr << "erro na aplicacao. mensagem:" << msg << endl;
     // }
-    
-    
-
 
     return 0;
 }
