@@ -36,8 +36,7 @@ public:
     // 5.
     Data operator+(int dias)
     {
-        Data temp;
-        temp = *this;
+        Data temp = *this;
         temp.recebe(dias);
         return temp;
     }
@@ -55,7 +54,6 @@ public:
     {
         return (this->dia != outraData.dia || this->mes != outraData.mes || this->ano != outraData.ano);
     }
-
     Data operator++(int valor)
     {
         *this = *this + 1;
@@ -85,10 +83,12 @@ public:
     }
 
     // 8.
+    int diferencaEmDias(int, int, int);
     Data operator-(int dias)
     {
-        Data teste = *this;
-        return teste + (-dias);
+        Data temp = *this;
+        temp.diferencaEmDias(this->dia, this->mes, this->ano);
+        return temp;
     }
 };
 
@@ -269,6 +269,24 @@ int Data::RetornaDiferenca(int dia, int mes, int ano)
     else
         while (d2++ <= d1)
             diferenca++;
+
+    return diferenca;
+}
+
+// 8.
+int Data::diferencaEmDias(int dias, int meses, int anos)
+{
+
+    if (dias < 1 || dias > diasNoMes(meses, anos) || meses < 1 ||
+        meses > 12 || anos < 1)
+    {
+        throw "Data inválida.";
+    }
+
+    long int diasDataAtual = diasNoMes(this->mes, this->ano);
+    long int diasDataParametro = diasNoMes(mes, ano);
+
+    int diferenca = static_cast<int>(diasDataParametro - diasDataAtual);
 
     return diferenca;
 }

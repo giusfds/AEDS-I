@@ -1,122 +1,183 @@
 #include <iostream>
+
 using namespace std;
 
-class Hora
+class Horario
 {
-private:
+protected:
     int segundo;
     int minuto;
     int hora;
 
 public:
-    // 1.
-    Hora();
+    // 1
+    Horario();
 
-    // 2.
-    Hora(int, int, int);
-    bool valida(int, int, int);
+    // 2
+    Horario(int, int, int);
+    bool isValid(int, int, int);
 
-    // 3.
+    // 3
     int getSegundo();
     int getMinuto();
     int getHora();
 
-    // 4.
-    int adiciona(int, int, int);
+    // 4
+    void acrescentar(Horario);
+    void normalizar();
 
-    // 5.
-    Hora operator+(const Hora &segundo);
-    Hora operator=(const Hora &segundo);
+    // 5
+    Horario operator+(Horario);
 
-    // 7.
-    void exibeHorario();
+    // 6
+    Horario diferenca(Horario);
+
+    // 7
+    Horario operator-(Horario);
+
+    // 8
+     friend std::ostream& operator<<(std::ostream& output, const Horario& temp);
 };
 
-// 1.
-Hora::Hora()
-{
-    hora = 00;
-    minuto = 00;
-    segundo = 00;
+std::ostream& operator<<(std::ostream& output, const Horario& temp) {
+    output << temp.hora << ":" << temp.minuto << ":" << temp.segundo;
+    return output;
 }
 
-// 2.
-bool Hora::valida(int segundo, int minuto, int hora)
+// 1
+Horario::Horario()
 {
-    if (segundo >= 0 && segundo < 60 &&
-        minuto >= 0 && minuto < 60 &&
-        hora >= 0 && hora < 24)
-    {
-        return true;
-    }
-    return false;
+    this->segundo = 0;
+    this->minuto = 0;
+    this->hora = 0;
 }
 
-Hora::Hora(int segundo, int minuto, int hora)
+// 2
+bool Horario::isValid(int s, int m, int h)
 {
-    if (valida(segundo, minuto, hora))
+    if (s < 0 || m < 0 || h < 0)
     {
-        this->segundo = segundo;
-        this->minuto = minuto;
-        this->hora = hora;
+        return false;
     }
+    return true;
 }
 
-// 3.
-int Hora::getSegundo() { return segundo; }
-int Hora::getMinuto() { return minuto; }
-int Hora::getHora() { return hora; }
-
-// 4.
-int Hora::adiciona(int segundo, int minuto, int hora) {}
-
-// 5.
-Hora Hora::operator+(const Hora &segundo)
+Horario::Horario(int s, int m, int h)
 {
-    Hora resultado = *this;
-
-    if (resultado.segundo >= 60)
+    // validar
+    if (!isValid(s, m, h))
     {
-        resultado.minuto += resultado.segundo / 60;
-        resultado.segundo %= 60;
+        throw "horario nao valido";
     }
 
-    if (resultado.minuto >= 60)
-    {
-        resultado.hora += resultado.minuto / 60;
-        resultado.minuto %= 60;
-    }
+    // normalizar
+    // transformar de segundo para minuto quando passa de 60
+    segundo = s % 60;
+    minuto = s / 60;
 
-    if (resultado.hora >= 24)
-    {
-        resultado.hora %= 24;
-    }
-
-    return resultado;
-};
-
-Hora Hora::operator=(const Hora &segundo)
-{
-    this->hora = segundo.hora;
-    this->minuto = segundo.minuto;
-    this->segundo = segundo.segundo;
-    return *this;
+    // transformar de minuto para hora quando passa de 60
+    minuto = minuto + (m % 60);
+    // calculo hora
+    hora = (minuto / 60) + h;
 }
 
-// 7.
-void Hora::exibeHorario()
+// 3
+int Horario::getSegundo() { return this->segundo; }
+int Horario::getMinuto() { return this->minuto; }
+int Horario::getHora() { return this->hora; }
+
+// 4
+void Horario::normalizar()
 {
-    std::cout << "Hora atual: " << getHora() << ":" << getMinuto() << ":" << getSegundo() << endl;
+    // converter horario
+    // segundo p minuto
+    minuto += segundo / 60;
+    segundo = segundo % 60;
+
+    // minuto p hora
+    hora += minuto / 60;
+    minuto = minuto % 60;
 }
 
-int main()
+void Horario::acrescentar(Horario temp)
 {
-    // 1.
-    // Hora();
+    // um horario e somar em outro horario
+    // validar
+    if (!isValid(temp.segundo, temp.minuto, temp.hora))
+    {
+        throw "o horario e invalido";
+    }
 
-    // 2.
-    // Hora(20, 30, 10);
+    // somar
+    segundo += temp.segundo;
+    minuto += temp.minuto;
+    hora += temp.hora;
 
-    
+    // normalizar
+    normalizar();
+}
 
+// 5
+Horario Horario::operator+(Horario temp)
+{
+    Horario soma;
+
+    soma.segundo = this->segundo + temp.segundo;
+    soma.minuto = this->minuto + temp.minuto;
+    soma.hora = this->hora + temp.hora;
+
+    soma.normalizar();
+
+    return soma;
+}
+
+// 6
+Horario Horario::diferenca(Horario temp)
+{
+    // um horario que mostra a diferenca entre ambos
+    // validar
+    if (!isValid(temp.segundo, temp.minuto, temp.hora))
+    {
+        throw "o horario e invalido";
+    }
+
+    // subtrair
+    Horario subtrair;
+
+    subtrair.segundo = this->segundo - temp.segundo;
+    subtrair.minuto = this->minuto - temp.minuto;
+    subtrair.hora = this->hora - temp.hora;
+
+    // normalizar
+    subtrair.normalizar();
+
+    // retornar
+    return subtrair;
+}
+
+// 7
+Horario Horario::operator-(Horario temp)
+{
+    // 11:30:30 - 01:20:20 = objeto
+    Horario subtracao;
+
+    subtracao.segundo = this->segundo - temp.segundo;
+    subtracao.minuto = this->minuto - temp.minuto;
+    subtracao.hora = this->hora - temp.hora;
+
+    subtracao.normalizar();
+
+    return subtracao;
+}
+
+// 8
+// ostream& Horario::operator<< (ostream output,  Horario temp)
+// {
+
+// }
+
+main()
+{
+
+    return 0;
 }
