@@ -36,13 +36,8 @@ public:
     Horario operator-(Horario);
 
     // 8
-     friend std::ostream& operator<<(std::ostream& output, const Horario& temp);
+     friend ostream& operator<<(ostream& output, const Horario& temp);
 };
-
-std::ostream& operator<<(std::ostream& output, const Horario& temp) {
-    output << temp.hora << ":" << temp.minuto << ":" << temp.segundo;
-    return output;
-}
 
 // 1
 Horario::Horario()
@@ -171,10 +166,10 @@ Horario Horario::operator-(Horario temp)
 }
 
 // 8
-// ostream& Horario::operator<< (ostream output,  Horario temp)
-// {
-
-// }
+ostream& operator<<(ostream& output, const Horario& temp) {
+    output << temp.hora << ":" << temp.minuto << ":" << temp.segundo;
+    return output;
+}
 
 main()
 {
