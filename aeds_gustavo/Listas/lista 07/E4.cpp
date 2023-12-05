@@ -1,5 +1,4 @@
 #include <iostream>
-
 using namespace std;
 
 // CONTA
@@ -26,8 +25,8 @@ class Corrente : public Conta
 // POUPANCA
 class Poupanca : public Conta
 {
-    int aniversario;
-    float valor;
+    int aniversario[];
+    float valor[];
 
 public:
     int getAniversario();
@@ -41,6 +40,7 @@ public:
     float limite;
     Especial(float limite);
 };
+
 //  PESSOA
 class Pessoa
 {
@@ -48,7 +48,7 @@ private:
     string nome;
 
 public:
-    Conta conta;
+    Conta conta[];
 
     Pessoa(string nome, string CPF);
     string getNome();
@@ -72,4 +72,15 @@ class Juridica : public Pessoa
 
 public:
     Juridica(string CPF);
+};
+
+// HISTORICO
+class Historico
+{
+    int numero_conta[];
+    int operacao[];
+    float valor[];
+
+public:
+    void operar(Conta, int operacao, float valor);
 };
