@@ -36,7 +36,7 @@ public:
     Horario operator-(Horario);
 
     // 8
-     friend ostream& operator<<(ostream& output, const Horario& temp);
+    friend ostream &operator<<(ostream &output, const Horario &temp);
 };
 
 // 1
@@ -92,6 +92,19 @@ void Horario::normalizar()
     // minuto p hora
     hora += minuto / 60;
     minuto = minuto % 60;
+
+    // se for negativo
+    if (segundo < 0)
+    {
+        minuto--;
+        segundo += 60;
+    }
+
+    if (minuto < 0)
+    {
+        hora--;
+        minuto += 60;
+    }
 }
 
 void Horario::acrescentar(Horario temp)
@@ -166,7 +179,8 @@ Horario Horario::operator-(Horario temp)
 }
 
 // 8
-ostream& operator<<(ostream& output, const Horario& temp) {
+ostream &operator<<(ostream &output, const Horario &temp)
+{
     output << temp.hora << ":" << temp.minuto << ":" << temp.segundo;
     return output;
 }
