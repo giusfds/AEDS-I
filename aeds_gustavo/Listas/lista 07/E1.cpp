@@ -2,11 +2,6 @@
 
 using namespace std;
 
-void clear()
-{
-    system("cls");
-}
-
 class Data
 {
 protected:
@@ -15,124 +10,47 @@ protected:
     int ano;
 
 public:
-    void saida();
-
-    // 1.
+    // 1
     Data();
 
-    // 2.
-    bool valida(int, int, int);
+    // 2
     Data(int, int, int);
+    bool isValid(int, int, int);
 
-    // 3.
-    int getAno();
-    int getMes();
+    // 3
     int getDia();
+    int getMes();
+    int getAno();
 
-    // 4.
-    int diasNoMes(int, int);
-    void recebe(int);
+    // 4
+    void addDays(int);
+    int qualMes();
+    void normalizar();
+    bool isValidDay(int);
 
-    // 5.
-    Data operator+(int dias)
-    {
-        Data temp = *this;
-        temp.recebe(dias);
-        return temp;
-    }
+    // 5
+    Data operator+(int);
 
-    // 6.
-    friend ostream &operator<<(ostream &output, const Data &hoje)
-    {
-        output << hoje.dia << "/" << hoje.mes << "/" << hoje.ano;
-        return output;
-    }
+    // 6
+    friend ostream &operator<<(ostream &, const Data &);
 
-    // 7.
-    int RetornaDiferenca(int, int, int);
-    bool operator!=(Data &outraData)
-    {
-        return (this->dia != outraData.dia || this->mes != outraData.mes || this->ano != outraData.ano);
-    }
-    Data operator++(int valor)
-    {
-        *this = *this + 1;
-        return *this;
-    }
-    bool operator<(const Data &outraData) const
-    {
-        if (ano < outraData.ano)
-            return true;
-        else if (ano > outraData.ano)
-            return false;
+    // 7
+    int diferencaDeDias(Data);
 
-        if (mes < outraData.mes)
-            return true;
-        else if (mes > outraData.mes)
-            return false;
-
-        return dia < outraData.dia;
-    }
-    bool operator==(const Data &outraData) const
-    {
-        return (dia == outraData.dia) && (mes == outraData.mes) && (ano == outraData.ano);
-    }
-    bool operator<=(const Data &outraData) const
-    {
-        return (*this < outraData) || (*this == outraData);
-    }
-
-    // 8.
-    int diferencaEmDias(int, int, int);
-    Data operator-(int dias)
-    {
-        Data temp = *this;
-        temp.diferencaEmDias(this->dia, this->mes, this->ano);
-        return temp;
-    }
+    // 8
+    int operator-(Data);
 };
 
-void Data::saida()
+// 1
+Data ::Data()
 {
-
-    if (dia < 10)
-    {
-        cout << "0";
-    }
-    cout << dia << '/';
-
-    if (mes < 10)
-    {
-        cout << "0";
-    }
-    cout << mes << '/';
-
-    if (ano < 10)
-    {
-        cout << "000";
-    }
-    else if (ano < 100)
-    {
-        cout << "00";
-    }
-    else if (ano < 1000)
-    {
-        cout << "0";
-    }
-    cout << ano << endl;
+    dia = 1;
+    mes = 1;
+    ano = 1;
 }
 
-// 1.
-Data::Data()
-{
-
-    this->dia = 01;
-    this->mes = 01;
-    this->ano = 0001;
-}
-
-// 2.
-bool Data::valida(int dia, int mes, int ano)
+// 2
+bool Data::isValid(int dia, int mes, int ano)
 {
     if (ano > 0 && mes >= 1 && mes <= 12)
     {
@@ -179,34 +97,35 @@ bool Data::valida(int dia, int mes, int ano)
         return false;
     }
 }
-
 Data::Data(int dia, int mes, int ano)
 {
-    if (!valida(dia, mes, ano))
+    // validar
+    if (!isValid(dia, mes, ano))
     {
-        throw "data invalida";
+        throw "o dia e invalido";
     }
 
+    // atribuir
     this->dia = dia;
     this->mes = mes;
     this->ano = ano;
 }
 
-// 3.
-int Data::getAno() { return ano; }
-int Data::getMes() { return mes; }
-int Data::getDia() { return dia; }
+// 3
+int Data::getDia() { return this->dia; }
+int Data::getMes() { return this->mes; }
+int Data::getAno() { return this->ano; }
 
-// 4.
-int Data::diasNoMes(int mes, int ano)
+// 4
+int Data::qualMes()
 {
     // verificando ano bisexto
-    if (mes == 2)
+    if (this->mes == 2)
     {
-        return ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) ? 29 : 28;
+        return ((this->ano % 4 == 0 && this->ano % 100 != 0) || (this->ano % 400 == 0)) ? 29 : 28;
     }
     // verificando se o mes tem 30 ou 31 dias
-    else if (mes == 4 || mes == 6 || mes == 9 || mes == 11)
+    else if (this->mes == 4 || this->mes == 6 || this->mes == 9 || this->mes == 11)
     {
         return 30;
     }
@@ -216,154 +135,79 @@ int Data::diasNoMes(int mes, int ano)
     }
 }
 
-void Data::recebe(int dias)
+void Data::normalizar()
 {
-    // adicionar dias a data ja criada
-    if (dias > 0)
+    // dia p mes
+    mes += dia / qualMes();
+    dia = dia % qualMes();
+
+    // mes p ano
+    ano += mes / 12;
+    mes = mes % 12;
+
+    // se for negativo
+
+    if (this->dia < 0)
     {
-        for (int i = 0; i < dias; i++)
-        {
-            if (dia < diasNoMes(mes, ano))
-            {
-                dia++;
-            }
-            else
-            {
-                dia = 1;
-                if (mes < 12)
-                {
-                    mes++;
-                }
-                else
-                {
-                    mes = 1;
-                    ano++;
-                }
-            }
-        }
+        this->mes--;
+        this->dia += qualMes();
     }
-    else
+
+    if (this->mes < 0)
     {
-        throw "o numero de dias tem que ser maior que 0";
+        this->ano--;
+        this->mes += qualMes();
     }
 }
 
-// 5/6.
-/*
-apenas consegui montar ele na class, nao usando scopo
-*/
-
-// 7.
-
-int Data::RetornaDiferenca(int dia, int mes, int ano)
+bool Data::isValidDay(int newDays)
 {
-
-    int diferenca = 0;
-
-    Data d1 = *this, d2(dia, mes, ano);
-
-    if (d1 < d2)
-        while (d1++ <= d2)
-            diferenca++;
-
-    else
-        while (d2++ <= d1)
-            diferenca++;
-
-    return diferenca;
 }
 
-// 8.
-int Data::diferencaEmDias(int dias, int meses, int anos)
+void Data::addDays(int newDias)
 {
-
-    if (dias < 1 || dias > diasNoMes(meses, anos) || meses < 1 ||
-        meses > 12 || anos < 1)
-    {
-        throw "Data inválida.";
-    }
-
-    long int diasDataAtual = diasNoMes(this->mes, this->ano);
-    long int diasDataParametro = diasNoMes(mes, ano);
-
-    int diferenca = static_cast<int>(diasDataParametro - diasDataAtual);
-
-    return diferenca;
+    // verificar
+    if (!isValidDay(newDias))
+        throw "essa data nao e valida";
+    // somar
+    this->dia += newDias;
+    // normalizar
+    normalizar();
 }
 
-int main()
+// 5
+Data Data::operator+(int newDias)
 {
-    clear();
+    Data adiciona = *this;
 
-    // 1.
-    // Data hoje;
-    // hoje.saida();
+    adiciona.dia = this->dia + newDias;
+    adiciona.normalizar();
+    return adiciona;
+}
 
-    // 2.
-    // try
-    // {
-    //     Data hoje(92, 36, 18364);
-    // }
-    // catch (char *msg)
-    // {
-    //     cerr << "erro na aplicacao. mensagem:" << msg << endl;
-    // }
+// 6
+ostream &operator<<(ostream &output, const Data &temp)
+{
+    output << temp.dia << "/" << temp.mes << "/" << temp.ano << endl;
+    return output;
+}
 
-    // cout << "o cosigo se encontra nas linhas 155 a 157" << endl;
-
-    // 4.
-    // try
-    // {
-
-    //     Data hoje(9, 11, 2004);
-    //     hoje.saida();
-    //     hoje.recebe(10);
-    //     hoje.saida();
-    // }
-    // catch (char *msg)
-    // {
-    //     cerr << "erro na aplicacao, mensagem:" << msg << endl;
-    // }
-
-    // 5.
-    // try
-    // {
-    //     Data hoje(9, 11, 2004);
-    //     hoje = hoje + 100;
-    //     hoje.saida();
-    // }
-    // catch (char *msg)
-    // {
-    //     cerr << "erro na aplicacao, mensagem:" << msg << endl;
-    // }
-
-    // 6.
-    // Data hoje(9, 11, 2004);
-    // cout << hoje << endl;
-
-    // 7.
-    // int diferenca;
-    // Data hoje(9, 11, 2004);
-    // cout << hoje << endl;
-    // diferenca = hoje.RetornaDiferenca(8, 11, 2004);
-    // cout << hoje << endl;
-    // cout << diferenca << endl;
-
-    // 8.
-    try
+// 7
+int Data::diferencaDeDias(Data temp)
+{
+    int quntdias = 0;
+    while (this->dia != temp.dia || this->mes != temp.mes || this->ano != temp.ano)
     {
-        Data hoje(9, 11, 2004);
-        hoje - 8;
-        cout << hoje << endl;
+        temp.addDays(1);
+        quntdias++;
     }
-    catch (char *msg)
-    {
-        cerr << "erro na aplicacao, mensagem:" << msg << endl;
-    }
+    return quntdias;
+}
 
-    cout << endl;
-    cout << endl;
-    cout << endl;
-
-    return 0;
+// 8
+int Data::operator-(Data temp)
+{
+    int total = 0;
+    total = diferencaDeDias(*this, temp);
+    return total;
 }
