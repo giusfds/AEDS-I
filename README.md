@@ -8,8 +8,10 @@ Aeds1 e composto por ocisas ismples, aprender a logica basica de certas coisas, 
 Exemplos de coisas que voce pode aprender:
 ```
 - Estruturas de Dados
-    |_ Aprender a utilizar condicionais, repeticoes, vetores, matrizes, alocacao de memoria e o basicod e OO.
-        |_ um exemplo classico, e a implementacao de um codigo para saber se uma palavra e um palindromo ou nao.
+    |_ Aprender a utilizar condicionais, repeticoes, vetores, matrizes, alocacao de memoria e o
+        basico e OO.
+        |_ um exemplo classico, e a implementacao de um codigo para saber se uma palavra e um palindromo
+            ou nao.
         |_ outro exemplo, e a implementacao de um codigo para saber se um numero e primo ou nao.
 ```
 
