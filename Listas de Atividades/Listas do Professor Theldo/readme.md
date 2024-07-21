@@ -10,7 +10,7 @@ no canvas, ele disponibiliza um ``.ZIP`` com todas as atividades que voce vai te
 
 eu nao fiz aeds1 com o theldo, porem recomendo muito o repositorio do Vinishow, acho que e o repositorio que eu mais me inspiro para falar do theldo, e acho que e o repositorio que mais tem conteudo sobre o theldo.
 
-[Repositorio](https://github.com/vinimiraa/AEDs-I)
+[Repositorio do Vinishow](https://github.com/vinimiraa/AEDs-I)
 
 ## Pasta
 
