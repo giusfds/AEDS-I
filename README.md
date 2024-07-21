@@ -31,4 +31,4 @@ Quando voce passar para aeds2, recomendo dar uma olha no repositorio de AEDs2, o
 
 ## Autor
 Espero que isso seja util a alguem, e que possa ajudar alguem a passar em AEDs1, e aprimorar o conhecimento em C e C++.
-- [Giuseppe](github.com/giusfds)
+- Giuseppe Cordeiro 2023/2
