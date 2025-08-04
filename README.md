@@ -1,34 +1,29 @@
-#  Algoritmos e Estruturas de Dados I || (AEDS1)
+# Algoritmos e Estruturas de Dados I (AEDs I) 🧑‍💻
 
-## Descrição
-Repositório destinado a armazenar os códigos e dicas desenvolvidos na disciplina de Algoritmos e Estruturas de Dados I.
+Este repositório reúne materiais da disciplina **Algoritmos e Estruturas de Dados I**, ministrada pelo professor **Gustavo Henrique Borges Martis** na PUC Minas.
 
-## Conteúdo
-Aeds1 e composto por ocisas ismples, aprender a logica basica de certas coisas, utilizando a linguagem C, assim como aprimorar a logica de programacao.
-Exemplos de coisas que voce pode aprender:
-```
-- Estruturas de Dados
-    |_ Aprender a utilizar condicionais, repeticoes, vetores, matrizes, alocacao de memoria e o
-        basico e OO.
-        |_ um exemplo classico, e a implementacao de um codigo para saber se uma palavra e um palindromo
-        |   ou nao.
-        |_ outro exemplo, e a implementacao de um codigo para saber se um numero e primo ou nao.
-```
+## 📚 Sobre a disciplina
 
-Enfim, AEDs1 e uma disciplina que visa aprimorar a logica de programacao, e aprimorar o conhecimento em C.
+A disciplina marca o início da jornada em programação, com foco em lógica, sintaxe e construção de algoritmos utilizando a linguagem **C**. Também são abordados os primeiros conceitos de **Programação Orientada a Objetos** em **C++**.
 
-Quando voce passar um pouco mais para frente em aeds1, voce vai aprender um pouco de OO (Orientacao a Objetos), e vai aprender a utilizar ponteiros, e alocacao de memoria dinamica, em C++, ja que sao conteudos que serao uteis para a disciplina de AEDs2.
+### Principais tópicos:
 
-## Professor
+- Variáveis, operadores, estruturas condicionais e de repetição
+- Funções e recursividade
+- Arrays e strings
+- Ponteiros e alocação dinâmica
+- Estruturas (struct)
+- Introdução a classes e objetos em C++
 
-Bom, eu fiz aeds1 duas vezes, a primeira foi com o Naisses, onde eu aprendi bastante sobre o basico da programacao, e a segunda foi com o Gustavo, onde eu aprimorei os meus conhecimentos e aprendi muitas coisas que eu usei bastante em aeds2.
+## 👨‍🏫 Professor
 
-## AEDS2
+- **Gustavo Henrique Borges Martis**
+- Foco na lógica de programação e desenvolvimento de uma base sólida em C, com introdução ao paradigma orientado a objetos.
 
-Quando voce passar para aeds2, recomendo dar uma olha no repositorio de AEDs2, onde voce vai encontrar muitas coisas uteis para a disciplina.
+## 🎯 Objetivo
 
-[Repositorio de Aeds-II](github.com/giusfds/AEDS-II)
+Desenvolver a base da programação estruturada e preparar os alunos para lidar com tipos de dados mais complexos nas próximas disciplinas de AEDs.
 
-## Autor
-Espero que isso seja util a alguem, e que possa ajudar alguem a passar em AEDs1, e aprimorar o conhecimento em C e C++.
-- Giuseppe Cordeiro 2023/2
+---
+
+> Repositório mantido por alunos da Ciência da Computação — PUC Minas.
